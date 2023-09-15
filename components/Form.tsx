@@ -40,7 +40,7 @@ export default function Form({
 
   return (
     <div
-      className={`flex flex-col gap-medium items-center ${bgColor} rounded-b-lg`}
+      className={`flex flex-col gap-medium items-center ${bgColor} rounded-b-lg shadow-high`}
     >
       {title && (
         <H1
@@ -79,8 +79,7 @@ export default function Form({
           type="submit"
           marginX="mx-large"
           marginY="mt-small"
-          bgColor="bg-primary4
-          0"
+          bgColor="bg-primary40"
           textColor="text-primary0 "
         >
           ENVOYER
