@@ -29,7 +29,7 @@ export default function PrimaryCta({
       bgColor={`${!bgColor ? "bg-primary40" : bgColor}`}
       textColor={`${!textColor ? "text-white" : textColor}`}
       margin={margin}
-      rounded="rounded-extraSmall"
+      rounded="rounded-extra-small"
       onClick={onClick}
       type={type ? type : "button"}
       size={`button--${size}`}

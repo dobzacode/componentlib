@@ -9,7 +9,7 @@ import P from "@/components/text/P";
 export default function Home() {
   return (
     <main className="flex justify-between flex-col items-center flex-wrap gap-large h-full mx-auto">
-      <div className="flex flex-col gap-subLarge">
+      <div className="flex flex-col gap-sub-large">
         <H1 type="heading--extra-large" textColor="text-primary40">
           Extra large heading
         </H1>
@@ -35,7 +35,7 @@ export default function Home() {
         <DivImage
           src="https://placehold.co/600x400"
           dimension="h-[400px] w-[400px]"
-          rounded="rounded-extraSmall"
+          rounded="rounded-extra-small"
           alt="alt"
           sizes="50vw"
         ></DivImage>

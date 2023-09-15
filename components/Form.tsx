@@ -40,21 +40,21 @@ export default function Form({
 
   return (
     <div
-      className={`flex flex-col gap-medium items-center ${bgColor} rounded-extraSmall shadow-high border border-primary5 box-content`}
+      className={`flex flex-col gap-medium items-center ${bgColor} rounded-extra-small shadow-primary-high border border-primary5 box-content`}
     >
       {title && (
         <H1
           type="heading"
           textColor="text-primary0 "
           bgColor="bg-primary40"
-          padding="py-small px-subLarge"
-          rounded="rounded-t-extraSmall "
+          padding="py-small px-sub-large"
+          rounded="rounded-t-extra-small "
         >
           {title}
         </H1>
       )}
       <form
-        className={`body flex flex-col gap-subMedium pb-subLarge `}
+        className={`body flex flex-col gap-sub-medium pb-sub-large `}
         onSubmit={handleSubmit}
       >
         <Field
@@ -75,13 +75,7 @@ export default function Form({
           value={formData.email}
           onChange={handleChange}
         ></Field>
-        <PrimaryCta
-          type="submit"
-          marginX="mx-large"
-          marginY="mt-small"
-          bgColor="bg-primary40"
-          textColor="text-primary0 "
-        >
+        <PrimaryCta type="submit" size="small" margin="mx-large mt-small">
           ENVOYER
         </PrimaryCta>
       </form>

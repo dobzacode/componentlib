@@ -13,22 +13,20 @@ interface SecondaryCta {
   size: "small" | "medium" | "large";
 }
 
-export default function SecondaryCta({
+export default function BorderCta({
   onClick,
   children,
-
   margin,
-
   textColor,
   shadow,
   size,
 }: SecondaryCta) {
   return (
     <Button
-      textColor={`${!textColor ? "text-white" : textColor}`}
+      textColor={`${!textColor ? "text-primary40" : textColor}`}
       rounded="rounded-extra-small"
       hover="hover"
-      bgColor="bg-secondary40"
+      border="border-primary40 border-2"
       onClick={onClick}
       margin={margin}
       shadow={shadow}

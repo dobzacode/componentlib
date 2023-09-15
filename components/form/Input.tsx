@@ -23,7 +23,7 @@ export default function Input({
 }: InputProps) {
   return (
     <input
-      className={`bg-primary5  text-primary90 p-extraSmall rounded-lg placeholder:text-primary90/[.4] box-border border border-primary90/[.2] outline-primary90/[.2] shadow-inner`}
+      className={`bg-primary5  text-primary90 p-extra-small rounded-lg placeholder:text-primary90/[.4] box-border border border-primary90/[.2] outline-primary90/[.2] shadow-inner`}
       required={required}
       type={type}
       id={id}

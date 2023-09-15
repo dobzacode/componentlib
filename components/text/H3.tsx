@@ -8,7 +8,7 @@ interface H3Props {
 export default function H3({ children, textColor, bgColor, type }: H3Props) {
   return (
     <h3
-      className={`subHeading ${textColor ? textColor : ""} ${
+      className={`${type} ${textColor ? textColor : ""} ${
         bgColor ? bgColor : ""
       } ${type ? type : ""}`}
     >

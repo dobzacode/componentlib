@@ -2,27 +2,27 @@
 @tailwind base;
 
 .heading--extra-large {
-  @apply text-headingExtraLargeFS leading-headingExtraLargeLH font-bold;
+  @apply text-heading-extra-large leading-heading-extra-large font-bold;
 }
 
 .heading--large {
-  @apply text-headingLargeFS leading-headingLargeLH font-bold;
+  @apply text-heading-large leading-heading-large font-bold;
 }
 
 .heading--sub-large {
-  @apply text-headingSubLargeFS leading-headingSubLargeLH font-medium;
+  @apply text-heading-sub-large leading-heading-sub-large font-medium;
 }
 
 .heading {
-  @apply text-headingFS leading-headingLH font-medium;
+  @apply text-heading leading-heading font-medium;
 }
 
 .sub-heading {
-  @apply text-subHeadingFS leading-subHeadingLH font-normal;
+  @apply text-sub-heading leading-sub-heading font-normal;
 }
 
 .body {
-  @apply text-bodyFS leading-bodyLH font-normal;
+  @apply text-body leading-body font-normal;
 }
 
 .button--primary {
@@ -30,15 +30,15 @@
 }
 
 .button--large {
-  @apply py-subLarge px-large heading--sub-large;
+  @apply py-sub-large px-large heading--sub-large;
 }
 
 .button--medium {
-  @apply py-subMedium px-subLarge heading;
+  @apply py-sub-medium px-sub-large heading;
 }
 
 .button--small {
-  @apply py-small px-subLarge text-bodyFS leading-bodyLH font-medium;
+  @apply py-small px-sub-large text-body leading-body font-medium;
 }
 
 @tailwind utilities;
