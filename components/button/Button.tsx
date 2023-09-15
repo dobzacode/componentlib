@@ -3,18 +3,15 @@
 import { ButtonHTMLAttributes, DetailedHTMLProps } from "react";
 
 interface ButtonProps {
-  textSize: string;
   bgColor?: string;
   textColor?: string;
-  paddingY: string;
-  paddingX: string;
   rounded?: string;
   hover?: string;
   border?: string;
   onClick?: React.MouseEventHandler<HTMLButtonElement>;
   children: string | JSX.Element;
   type?: "button" | "submit" | "reset";
-
+  size: "button--small" | "button--medium" | "button--large";
   margin?: string;
   shadow?: string;
 }
@@ -22,26 +19,24 @@ interface ButtonProps {
 export default function Button({
   bgColor,
   textColor,
-  paddingY,
-  paddingX,
   rounded,
   onClick,
   children,
   border,
-  textSize,
   type,
   margin,
   shadow,
+  size,
 }: ButtonProps) {
   return (
     <button
       onClick={onClick ? onClick : () => console.log()}
       type={type ? type : "button"}
-      className={` ${
-        bgColor ? bgColor : ""
-      } ${textColor} ${paddingY} ${paddingX} ${rounded ? rounded : ""} ${
-        border ? border : ""
-      } ${textSize} ${margin ? margin : ""}  ${shadow ? shadow : ""}`}
+      className={` ${bgColor ? bgColor : ""} ${textColor}  ${
+        rounded ? rounded : ""
+      } ${border ? border : ""} ${size}  ${margin ? margin : ""}  ${
+        shadow ? shadow : ""
+      }`}
     >
       {children}
     </button>

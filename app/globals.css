@@ -29,6 +29,18 @@
   @apply text-primary0 bg-primary40;
 }
 
+.button--large {
+  @apply py-subLarge px-large heading--sub-large;
+}
+
+.button--medium {
+  @apply py-subMedium px-subLarge heading;
+}
+
+.button--small {
+  @apply py-small px-subLarge text-bodyFS leading-bodyLH font-medium;
+}
+
 @tailwind utilities;
 
 html {
