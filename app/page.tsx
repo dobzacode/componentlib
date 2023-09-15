@@ -8,7 +8,7 @@ import P from "@/components/text/P";
 
 export default function Home() {
   return (
-    <main className="flex justify-between flex-col items-center flex-wrap gap-large h-full">
+    <main className="flex justify-between flex-col items-center flex-wrap gap-large h-full mx-auto">
       <div className="flex flex-col gap-subLarge">
         <H1 type="headingExtraLarge" textColor="text-primary40">
           Extra large heading
@@ -25,7 +25,7 @@ export default function Home() {
         </P>
       </div>
       <AllButton></AllButton>
-      <div className="flex justify-center gap-medium bg-white w-full items-center py-large px-40">
+      <div className="flex flex-wrap justify-center gap-medium bg-white w-full items-center py-large tablet:px-40">
         <Form bgColor="bg-primary5/[.5]" title="Formulaire de contact"></Form>
         <DivImage
           src="https://placehold.co/600x400"

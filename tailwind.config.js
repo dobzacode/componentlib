@@ -1,5 +1,6 @@
 const HEADING_EXTRA_LARGE_SIZE = "12.8rem";
 const HEADING_LARGE_SIZE = "6.4rem";
+const HEADING_SUBLARGE_SIZE = "4.8rem";
 const HEADING_SIZE = "3.2rem";
 const SUBHEADING_SIZE = "2.4rem";
 const BODY_SIZE = "1.8rem";
@@ -66,6 +67,7 @@ module.exports = {
       fontSize: {
         headingExtraLargeFS: HEADING_EXTRA_LARGE_SIZE,
         headingLargeFS: HEADING_LARGE_SIZE,
+        headingSubLargeFS: HEADING_SUBLARGE_SIZE,
         headingFS: HEADING_SIZE,
         subHeadingFS: SUBHEADING_SIZE,
         bodyFS: BODY_SIZE,
@@ -73,6 +75,7 @@ module.exports = {
       lineHeight: {
         headingExtraLargeLH: HEADING_EXTRA_LARGE_SIZE,
         headingLargeLH: HEADING_LARGE_SIZE,
+        headingSubLargeLH: HEADING_SUBLARGE_SIZE,
         headingLH: HEADING_SIZE,
         subHeadingLH: SUBHEADING_SIZE,
         bodyLH: BODY_SIZE,

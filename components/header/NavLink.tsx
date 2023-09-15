@@ -13,11 +13,13 @@ export default function NavLink({ href, children }: NavLinkProps) {
   const isActive = pathname === href;
 
   return (
-    <Link
-      className={` hover:bg-black hover:text-white px-8 py-4 rounded-lg`}
-      href={href}
-    >
-      {children}
-    </Link>
+    <li>
+      <Link
+        className={` hover:bg-black hover:text-white px-8 py-4 rounded-lg`}
+        href={href}
+      >
+        {children}
+      </Link>
+    </li>
   );
 }

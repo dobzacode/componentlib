@@ -3,15 +3,21 @@ import React from "react";
 
 interface NavProps {
   children: React.ReactNode;
-  flex: string;
-  margin: string;
+  logo?: JSX.Element;
+  navStyle?: string;
+  navLinkStyle?: string;
 }
 
 export default function Nav({
-  flex,
-  margin,
-
+  logo,
+  navStyle,
+  navLinkStyle,
   children,
 }: NavProps) {
-  return <nav className={`${flex} ${margin}`}>{children}</nav>;
+  return (
+    <nav className={navStyle ? navStyle : ""}>
+      {logo ? logo : ""}
+      <ul className={`${navLinkStyle}`}>{children}</ul>
+    </nav>
+  );
 }

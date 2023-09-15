@@ -9,6 +9,10 @@
   @apply text-headingLargeFS leading-headingLargeLH font-bold;
 }
 
+.headingSubLarge {
+  @apply text-headingSubLargeFS leading-headingSubLargeLH font-medium;
+}
+
 .heading {
   @apply text-headingFS leading-headingLH font-medium;
 }

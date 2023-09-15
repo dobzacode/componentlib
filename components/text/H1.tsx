@@ -1,6 +1,6 @@
 interface H1Props {
   children: string | JSX.Element;
-  type: "headingExtraLarge" | "headingLarge" | "heading";
+  type: string;
   textColor?: string;
   bgColor?: string;
   padding?: string;
