@@ -1,5 +1,7 @@
 "use client";
 
+import { ButtonHTMLAttributes, DetailedHTMLProps } from "react";
+
 interface ButtonProps {
   textSize: string;
   bgColor?: string;
@@ -11,7 +13,7 @@ interface ButtonProps {
   border?: string;
   onClick?: React.MouseEventHandler<HTMLButtonElement>;
   children: string | JSX.Element;
-  type?: string;
+  type?: "button" | "submit" | "reset";
 }
 
 export default function Button({
@@ -29,7 +31,7 @@ export default function Button({
   return (
     <button
       onClick={onClick ? onClick : () => console.log()}
-      type={type}
+      type={type ? type : "button"}
       className={` ${
         bgColor ? bgColor : ""
       } ${textColor} ${paddingY} ${paddingX} ${rounded ? rounded : ""} ${

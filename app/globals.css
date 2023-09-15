@@ -1,12 +1,24 @@
-@tailwind base;
 @tailwind components;
+@tailwind base;
+
+.headingExtraLarge {
+  @apply text-headingExtraLargeFS leading-headingExtraLargeLH font-bold;
+}
+
+.headingLarge {
+  @apply text-headingLargeFS leading-headingLargeLH font-bold;
+}
 
 .heading {
-  @apply text-headingFS leading-6 font-medium;
+  @apply text-headingFS leading-headingLH font-medium;
+}
+
+.subHeading {
+  @apply text-subHeadingFS leading-subHeadingLH font-medium;
 }
 
 .body {
-  @apply text-bodyFS leading-6 font-normal;
+  @apply text-bodyFS leading-bodyLH font-normal;
 }
 
 @tailwind utilities;
