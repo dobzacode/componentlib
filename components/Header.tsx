@@ -5,14 +5,18 @@ import NavLink from "./header/NavLink";
 interface HeaderProps {
   children?: ReactNode;
   height: string;
+  bgColor: string;
 }
 
-export default function Header({ children, height }: HeaderProps) {
+export default function Header({ children, height, bgColor }: HeaderProps) {
   return (
-    <header className={`${height} flex items-center justify-center`}>
+    <header className={`${height} ${bgColor} flex items-center justify-center`}>
       {children}
 
-      <Nav flex="flex gap-40 justify-center" margin="mx-10">
+      <Nav
+        flex="flex gap-extraLarge justify-center heading text-secondary10"
+        margin="mx-10"
+      >
         <NavLink href="/">LIEN</NavLink>
         <NavLink href="/">LIEN</NavLink>
         <NavLink href="/">LIEN</NavLink>

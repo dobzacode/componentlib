@@ -23,10 +23,6 @@
 
 @tailwind utilities;
 
-body {
-  margin: 1em;
-}
-
 html {
   font-size: 62.5%;
 }

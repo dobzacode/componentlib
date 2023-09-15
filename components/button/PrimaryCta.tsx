@@ -11,7 +11,7 @@ interface PrimaryCta {
 export default function PrimaryCta({ onClick, children, type }: PrimaryCta) {
   return (
     <Button
-      bgColor="bg-black"
+      bgColor="bg-primary0"
       textColor="text-white"
       paddingY="py-4"
       paddingX="px-8"

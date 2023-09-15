@@ -19,7 +19,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="flex flex-col justify-between h-screen gap-20">
-        <Header height="h-[100px]"></Header>
+        <Header bgColor="bg-black" height="h-[200px]"></Header>
         {children}
         <Footer height="h-[100px]"></Footer>
       </body>

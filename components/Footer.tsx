@@ -8,11 +8,11 @@ interface FooterProps {
 export default function Footer({ height }: FooterProps) {
   return (
     <footer className={`${height}`}>
-      <address className="flex justify-center">
-        <SocialIcon size={2} linkTo="/" mdiPath={mdiInstagram}></SocialIcon>
-        <SocialIcon size={2} linkTo="/" mdiPath={mdiFacebook}></SocialIcon>
-        <SocialIcon size={2} linkTo="/" mdiPath={mdiTwitter}></SocialIcon>
-        <SocialIcon size={2} linkTo="/" mdiPath={mdiLinkedin}></SocialIcon>
+      <address className="flex justify-center gap-medium">
+        <SocialIcon size={3} linkTo="/" mdiPath={mdiInstagram}></SocialIcon>
+        <SocialIcon size={3} linkTo="/" mdiPath={mdiFacebook}></SocialIcon>
+        <SocialIcon size={3} linkTo="/" mdiPath={mdiTwitter}></SocialIcon>
+        <SocialIcon size={3} linkTo="/" mdiPath={mdiLinkedin}></SocialIcon>
       </address>
     </footer>
   );
