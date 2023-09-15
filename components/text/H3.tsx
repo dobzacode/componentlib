@@ -1,13 +1,15 @@
 interface H3Props {
   children: string | JSX.Element;
-  color?: string;
+  textColor?: string;
   bgColor?: string;
 }
 
-export default function H3({ children, color, bgColor }: H3Props) {
+export default function H3({ children, textColor, bgColor }: H3Props) {
   return (
     <h3
-      className={`subHeading ${color ? color : ""} ${bgColor ? bgColor : ""}`}
+      className={`subHeading ${textColor ? textColor : ""} ${
+        bgColor ? bgColor : ""
+      }`}
     >
       {children}
     </h3>

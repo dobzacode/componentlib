@@ -4,15 +4,25 @@ import { ChangeEvent, FormEvent, useState } from "react";
 import Input from "./form/Input";
 import Label from "./form/Label";
 import PrimaryCta from "./button/PrimaryCta";
+import H1 from "./text/H1";
+import Field from "./form/Field";
 
 interface FormData {
   nom: string;
+  prenom: string;
   email: string;
 }
 
-export default function Form() {
+export default function Form({
+  title,
+  bgColor,
+}: {
+  title?: string;
+  bgColor?: string;
+}) {
   const [formData, setFormData] = useState<FormData>({
     nom: "",
+    prenom: "",
     email: "",
   });
 
@@ -29,43 +39,53 @@ export default function Form() {
   };
 
   return (
-    <form className="body flex flex-col gap-subMedium " onSubmit={handleSubmit}>
-      <div className="flex flex-col gap-small">
-        <Label htmlFor="nom" hidden>
-          Nom
-        </Label>
-        <Input
-          required={true}
-          type="text"
-          id="nom"
-          name="nom"
+    <div
+      className={`flex flex-col gap-medium items-center ${bgColor} rounded-b-lg`}
+    >
+      {title && (
+        <H1
+          type="heading"
+          textColor="text-primary0 "
+          bgColor="bg-primary40"
+          padding="py-small px-subLarge"
+          rounded="rounded-t-lg"
+        >
+          {title}
+        </H1>
+      )}
+      <form
+        className={`body flex flex-col gap-subMedium pb-subLarge `}
+        onSubmit={handleSubmit}
+      >
+        <Field
+          flex="flex flex-col gap-small"
+          nom="nom"
           value={formData.nom}
           onChange={handleChange}
-          placeholder="test"
-        ></Input>
-      </div>
-      <div className="flex flex-col gap-small">
-        <Label htmlFor="email" hidden>
-          Email
-        </Label>
-        <Input
-          required={true}
-          type="text"
-          id="email"
-          name="email"
+        ></Field>
+        <Field
+          flex="flex flex-col gap-small"
+          nom="prenom"
+          value={formData.prenom}
+          onChange={handleChange}
+        ></Field>
+        <Field
+          flex="flex flex-col gap-small"
+          nom="email"
           value={formData.email}
           onChange={handleChange}
-        ></Input>
-      </div>
-      <PrimaryCta
-        type="submit"
-        marginX="mx-large"
-        marginY="mt-small"
-        bgColor="bg-white"
-        textColor="text-black"
-      >
-        ENVOYER
-      </PrimaryCta>
-    </form>
+        ></Field>
+        <PrimaryCta
+          type="submit"
+          marginX="mx-large"
+          marginY="mt-small"
+          bgColor="bg-primary4
+          0"
+          textColor="text-primary0 "
+        >
+          ENVOYER
+        </PrimaryCta>
+      </form>
+    </div>
   );
 }

@@ -9,26 +9,23 @@ export default function Home() {
   return (
     <main className="flex justify-between flex-col items-center flex-wrap gap-large h-full">
       <div className="flex flex-col gap-subLarge">
-        <H1 type="headingExtraLarge" color="text-primary40">
+        <H1 type="headingExtraLarge" textColor="text-primary40">
           Extra large heading
         </H1>
-        <H2 type="headingLarge" color="text-primary40">
+        <H2 type="headingLarge" textColor="text-primary40">
           Large heading
         </H2>
-        <H2 type="heading" color="text-primary40">
+        <H2 type="heading" textColor="text-primary40">
           Heading
         </H2>
-        <H3 color="text-primary40">Sub heading</H3>
-        <P type="body" color="text-primary30">
+        <H3 textColor="text-primary40">Sub heading</H3>
+        <P type="body" textColor="text-primary30">
           Body text
         </P>
       </div>
       <AllButton></AllButton>
-      <div className="flex flex-col gap-medium bg-tertiary10 w-full items-center py-large">
-        <H1 type="heading" color="text-tertiary90">
-          Form
-        </H1>
-        <Form></Form>
+      <div className="flex flex-col gap-medium bg-white w-full items-center py-large">
+        <Form bgColor="bg-primary5/[.5]" title="Formulaire de contact"></Form>
       </div>
     </main>
   );

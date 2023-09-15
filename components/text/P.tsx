@@ -1,13 +1,17 @@
 interface PProps {
   children: string | JSX.Element;
-  color?: string;
+  textColor?: string;
   bgColor?: string;
   type: "body";
 }
 
-export default function P({ children, type, color, bgColor }: PProps) {
+export default function P({ children, type, textColor, bgColor }: PProps) {
   return (
-    <p className={`${type} ${color ? color : ""} ${bgColor ? bgColor : ""}`}>
+    <p
+      className={`${type} ${textColor ? textColor : ""} ${
+        bgColor ? bgColor : ""
+      }`}
+    >
       {children}
     </p>
   );

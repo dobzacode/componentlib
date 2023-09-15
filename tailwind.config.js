@@ -26,6 +26,7 @@ module.exports = {
     extend: {
       colors: {
         primary0: `hsl(${PRIMARY_COLOR_RGB}, 99% )`,
+        primary5: `hsl(${PRIMARY_COLOR_RGB}, 95%)`,
         primary10: `hsl(${PRIMARY_COLOR_RGB}, 90%)`,
         primary20: `hsl(${PRIMARY_COLOR_RGB}, 80%)`,
         primary30: `hsl(${PRIMARY_COLOR_RGB}, 70%)`,
@@ -37,6 +38,7 @@ module.exports = {
         primary90: `hsl(${PRIMARY_COLOR_RGB}, 10%)`,
         primary100: `hsl(${PRIMARY_COLOR_RGB}, 0%)`,
         secondary0: `hsl(${SECONDARY_COLOR_RGB}, 99%)`,
+        secondary5: `hsl(${SECONDARY_COLOR_RGB}, 95%)`,
         secondary10: `hsl(${SECONDARY_COLOR_RGB}, 90%)`,
         secondary20: `hsl(${SECONDARY_COLOR_RGB}, 80%)`,
         secondary30: `hsl(${SECONDARY_COLOR_RGB}, 70%)`,
@@ -48,6 +50,7 @@ module.exports = {
         secondary90: `hsl(${SECONDARY_COLOR_RGB}, 10%)`,
         secondary100: `hsl(${SECONDARY_COLOR_RGB}, 0%)`,
         tertiary0: `hsl(${TERTIARY_COLOR_RGB}, 99%)`,
+        tertiary5: `hsl(${TERTIARY_COLOR_RGB}, 95%)`,
         tertiary10: `hsl(${TERTIARY_COLOR_RGB}, 90%)`,
         tertiary20: `hsl(${TERTIARY_COLOR_RGB}, 80%)`,
         tertiary30: `hsl(${TERTIARY_COLOR_RGB}, 70%)`,
