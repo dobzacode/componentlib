@@ -9,8 +9,9 @@ interface ButtonProps {
   rounded?: string;
   hover?: string;
   border?: string;
-  onClick: React.MouseEventHandler<HTMLButtonElement>;
+  onClick?: React.MouseEventHandler<HTMLButtonElement>;
   children: string | JSX.Element;
+  type?: string;
 }
 
 export default function Button({
@@ -23,10 +24,12 @@ export default function Button({
   children,
   border,
   textSize,
+  type,
 }: ButtonProps) {
   return (
     <button
-      onClick={onClick}
+      onClick={onClick ? onClick : () => console.log()}
+      type={type}
       className={` ${
         bgColor ? bgColor : ""
       } ${textColor} ${paddingY} ${paddingX} ${rounded ? rounded : ""} ${

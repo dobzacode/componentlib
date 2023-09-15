@@ -1,8 +1,9 @@
 "use client";
 
-import { ChangeEvent, useState } from "react";
+import { ChangeEvent, FormEvent, useState } from "react";
 import Input from "./form/Input";
 import Label from "./form/Label";
+import PrimaryCta from "./button/PrimaryCta";
 
 interface FormData {
   nom: string;
@@ -18,11 +19,15 @@ export default function Form() {
   ) => {
     const { name, value } = e.target;
     setFormData((prevFormData) => ({ ...prevFormData, [name]: value }));
-    console.log(formData);
+  };
+
+  const handleSubmit = async (e: FormEvent) => {
+    e.preventDefault();
+    console.log("submit");
   };
 
   return (
-    <form className="text-2xl">
+    <form className="text-2xl" onSubmit={handleSubmit}>
       <Label htmlFor="Nom">Nom</Label>
       <Input
         required={true}
@@ -32,6 +37,7 @@ export default function Form() {
         value={formData.nom}
         onChange={handleChange}
       ></Input>
+      <PrimaryCta type="submit">ENVOYER</PrimaryCta>
     </form>
   );
 }
