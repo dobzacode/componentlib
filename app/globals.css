@@ -1,15 +1,15 @@
 @tailwind components;
 @tailwind base;
 
-.headingExtraLarge {
+.heading--extra-large {
   @apply text-headingExtraLargeFS leading-headingExtraLargeLH font-bold;
 }
 
-.headingLarge {
+.heading--large {
   @apply text-headingLargeFS leading-headingLargeLH font-bold;
 }
 
-.headingSubLarge {
+.heading--sub-large {
   @apply text-headingSubLargeFS leading-headingSubLargeLH font-medium;
 }
 
@@ -17,12 +17,16 @@
   @apply text-headingFS leading-headingLH font-medium;
 }
 
-.subHeading {
+.sub-heading {
   @apply text-subHeadingFS leading-subHeadingLH font-normal;
 }
 
 .body {
   @apply text-bodyFS leading-bodyLH font-normal;
+}
+
+.button--primary {
+  @apply text-primary0 bg-primary40;
 }
 
 @tailwind utilities;
@@ -31,7 +35,7 @@ html {
   font-size: 62.5%;
 }
 
-.visuallyHidden {
+.--visually-hidden {
   border: 0;
   clip: rect(0 0 0 0);
   height: 1px;

@@ -17,9 +17,9 @@ export default function Header({ children, height, bgColor }: HeaderProps) {
       {children}
       <Nav
         navStyle="flex gap-large items-center justify-around w-full mx-10"
-        navLinkStyle="flex laptopL:gap-large laptop:gap-subLarge tablet:gap-small justify-center subHeading text-white "
+        navLinkStyle="flex laptopL:gap-large laptop:gap-subLarge tablet:gap-small justify-center sub-heading text-white "
         logo={
-          <H2 type="headingSubLarge" textColor="text-white">
+          <H2 type="heading--sub-large" textColor="text-white">
             MY SYSTEM
           </H2>
         }
