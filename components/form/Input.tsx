@@ -9,6 +9,7 @@ interface InputProps {
   name: string;
   value: string;
   onChange: React.ChangeEventHandler<HTMLInputElement>;
+  placeholder?: string;
 }
 
 export default function Input({
@@ -18,16 +19,18 @@ export default function Input({
   name,
   value,
   onChange,
+  placeholder,
 }: InputProps) {
   return (
     <input
-      className={`bg-black text-white p-4 rounded-lg`}
+      className={`bg-black text-white p-extraSmall rounded-lg placeholder:text-white`}
       required={required}
       type={type}
       id={id}
       name={name}
       value={value}
       onChange={onChange}
+      placeholder={placeholder ? placeholder : ""}
     ></input>
   );
 }

@@ -3,12 +3,15 @@ import { mdiInstagram, mdiFacebook, mdiTwitter, mdiLinkedin } from "@mdi/js";
 
 interface FooterProps {
   height: string;
+  bgColor: string;
+  flex?: string;
+  margin?: string;
 }
 
-export default function Footer({ height }: FooterProps) {
+export default function Footer({ height, bgColor, flex, margin }: FooterProps) {
   return (
-    <footer className={`${height}`}>
-      <address className="flex justify-center gap-medium">
+    <footer className={`${height} ${bgColor} ${flex} ${margin} -mt-large`}>
+      <address className="flex justify-center gap-medium ">
         <SocialIcon size={3} linkTo="/" mdiPath={mdiInstagram}></SocialIcon>
         <SocialIcon size={3} linkTo="/" mdiPath={mdiFacebook}></SocialIcon>
         <SocialIcon size={3} linkTo="/" mdiPath={mdiTwitter}></SocialIcon>

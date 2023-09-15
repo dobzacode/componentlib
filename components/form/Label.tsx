@@ -1,8 +1,13 @@
 interface LabelProps {
   children: string;
   htmlFor: string;
+  hidden: boolean;
 }
 
-export default function Label({ children, htmlFor }: LabelProps) {
-  return <label htmlFor={htmlFor}>{children}</label>;
+export default function Label({ children, htmlFor, hidden }: LabelProps) {
+  return (
+    <label htmlFor={htmlFor} className={hidden ? "visuallyHidden" : ""}>
+      {children}
+    </label>
+  );
 }

@@ -10,7 +10,7 @@ interface SocialIconProps {
 export default function SocialIcon({ mdiPath, linkTo, size }: SocialIconProps) {
   return (
     <Link href={linkTo}>
-      <Icon path={mdiPath} size={size}></Icon>
+      <Icon path={mdiPath} size={size} className="text-white"></Icon>
     </Link>
   );
 }

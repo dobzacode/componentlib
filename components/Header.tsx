@@ -14,7 +14,7 @@ export default function Header({ children, height, bgColor }: HeaderProps) {
       {children}
 
       <Nav
-        flex="flex gap-extraLarge justify-center heading text-secondary10"
+        flex="flex gap-extraLarge justify-center heading text-white"
         margin="mx-10"
       >
         <NavLink href="/">LIEN</NavLink>

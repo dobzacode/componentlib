@@ -10,13 +10,13 @@ interface SecondaryCta {
 export default function SecondaryCta({ onClick, children }: SecondaryCta) {
   return (
     <Button
-      textColor="text-black"
-      paddingY="py-4"
-      paddingX="px-8"
+      textColor="text-primary40"
+      paddingY="py-small"
+      paddingX="px-subLarge"
       rounded="rounded-lg"
       hover="hover"
-      border="border-black border-2"
-      textSize="text-2xl"
+      border="border-primary40 border-2"
+      textSize="body"
       onClick={onClick}
     >
       {children}

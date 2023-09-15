@@ -6,17 +6,31 @@ interface PrimaryCta {
   children: string | JSX.Element;
   onClick?: React.MouseEventHandler<HTMLButtonElement>;
   type?: "button" | "submit" | "reset";
+  marginY?: string;
+  marginX?: string;
+  bgColor?: string;
+  textColor?: string;
 }
 
-export default function PrimaryCta({ onClick, children, type }: PrimaryCta) {
+export default function PrimaryCta({
+  onClick,
+  children,
+  type,
+  marginY,
+  marginX,
+  bgColor,
+  textColor,
+}: PrimaryCta) {
   return (
     <Button
-      bgColor="bg-primary0"
-      textColor="text-white"
-      paddingY="py-4"
-      paddingX="px-8"
+      bgColor={`${!bgColor ? "bg-primary40" : bgColor}`}
+      textColor={`${!textColor ? "text-white" : textColor}`}
+      paddingY="py-small"
+      paddingX="px-subLarge"
+      marginY={marginY}
+      marginX={marginX}
       rounded="rounded-lg"
-      textSize="text-2xl"
+      textSize="body"
       onClick={onClick}
       type={type ? type : "button"}
     >
