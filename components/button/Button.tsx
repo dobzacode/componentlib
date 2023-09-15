@@ -3,38 +3,61 @@
 import { ButtonHTMLAttributes, DetailedHTMLProps } from "react";
 
 interface ButtonProps {
-  bgColor?: string;
-  textColor?: string;
-  rounded?: string;
   hover?: string;
-  border?: string;
+
   onClick?: React.MouseEventHandler<HTMLButtonElement>;
   children: string | JSX.Element;
   type?: "button" | "submit" | "reset";
-  size: "button--small" | "button--medium" | "button--large";
+  color:
+    | "primary"
+    | "secondary"
+    | "tertiary"
+    | "transparent-primary"
+    | "transparent-secondary"
+    | "transparent-tertiary"
+    | "transparent-black";
+  size: "small" | "medium" | "large";
   margin?: string;
   shadow?: string;
 }
 
 export default function Button({
-  bgColor,
-  textColor,
-  rounded,
   onClick,
   children,
-  border,
+  color,
   type,
   margin,
   shadow,
   size,
 }: ButtonProps) {
+  const finalcolor = () => {
+    switch (color) {
+      case "primary":
+        return "bg-primary40 text-white";
+      case "secondary":
+        return "bg-secondary40 text-white";
+      case "tertiary":
+        return "bg-tertiary40 text-white";
+      case "transparent-primary":
+        return "border border-primary40 text-primary40";
+      case "transparent-secondary":
+        return "border border-secondary40 text-secondary40";
+      case "transparent-tertiary":
+        return "border border-tertiary40 text-tertiary40";
+      case "transparent-black":
+        return "border border-black text-black";
+    }
+  };
+
+  const rounded = "rounded-extra-small";
+
   return (
     <button
       onClick={onClick ? onClick : () => console.log()}
       type={type ? type : "button"}
-      className={` ${bgColor ? bgColor : ""} ${textColor}  ${
+      className={`   ${
         rounded ? rounded : ""
-      } ${border ? border : ""} ${size}  ${margin ? margin : ""}  ${
+      } ${finalcolor()} button--${size}  ${margin ? margin : ""}  ${
         shadow ? shadow : ""
       }`}
     >

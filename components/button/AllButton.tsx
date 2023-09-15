@@ -1,97 +1,136 @@
 "use client";
 
-import BorderCta from "./BorderCta";
-import PrimaryCta from "./PrimaryCta";
-import SecondaryCta from "./SecondaryCta";
+import Button from "./Button";
 
 export default function AllButton() {
   return (
-    <div className="flex gap-sub-medium">
-      <div className="flex flex-col gap-sub-medium">
+    <div className="flex gap-large">
+      <div className="flex flex-col gap-sub-large">
         <div>
-          <PrimaryCta
+          <Button
+            color="primary"
             shadow="shadow-primary-high"
             size="large"
             onClick={() => console.log("test")}
           >
             LARGE
-          </PrimaryCta>
+          </Button>
         </div>
         <div>
-          <PrimaryCta
+          <Button
+            color="primary"
             shadow="shadow-primary-medium"
             size="medium"
             onClick={() => console.log("test")}
           >
             MEDIUM
-          </PrimaryCta>
+          </Button>
         </div>
         <div>
-          <PrimaryCta
+          <Button
+            color="primary"
             shadow="shadow-primary-small"
             size="small"
             onClick={() => console.log("test")}
           >
             SMALL
-          </PrimaryCta>
+          </Button>
         </div>
       </div>
-      <div className="flex flex-col gap-sub-medium">
+      <div className="flex flex-col gap-sub-large">
         <div>
-          <SecondaryCta
+          <Button
+            color="secondary"
             shadow="shadow-secondary-high"
             size="large"
             onClick={() => console.log("test")}
           >
             LARGE
-          </SecondaryCta>
+          </Button>
         </div>
         <div>
-          <SecondaryCta
+          <Button
+            color="secondary"
             shadow="shadow-secondary-medium"
             size="medium"
             onClick={() => console.log("test")}
           >
             MEDIUM
-          </SecondaryCta>
+          </Button>
         </div>
         <div>
-          <SecondaryCta
+          <Button
+            color="secondary"
             shadow="shadow-secondary-small"
             size="small"
             onClick={() => console.log("test")}
           >
             SMALL
-          </SecondaryCta>
+          </Button>
         </div>
       </div>
-      <div className="flex flex-col gap-sub-medium">
+      <div className="flex flex-col gap-sub-large">
         <div>
-          <BorderCta
+          <Button
+            color="tertiary"
+            shadow="shadow-tertiary-high"
+            size="large"
+            onClick={() => console.log("test")}
+          >
+            LARGE
+          </Button>
+        </div>
+        <div>
+          <Button
+            color="tertiary"
+            shadow="shadow-tertiary-medium"
+            size="medium"
+            onClick={() => console.log("test")}
+          >
+            MEDIUM
+          </Button>
+        </div>
+        <div>
+          <Button
+            color="tertiary"
+            shadow="shadow-tertiary-small"
+            size="small"
+            onClick={() => console.log("test")}
+          >
+            SMALL
+          </Button>
+        </div>
+      </div>
+      <div className="flex flex-col gap-sub-large">
+        <div>
+          <Button
+            color="transparent-black"
             shadow="shadow-high"
             size="large"
             onClick={() => console.log("test")}
           >
             LARGE
-          </BorderCta>
+          </Button>
         </div>
         <div>
-          <BorderCta
+          <Button
+            color="transparent-black"
             shadow="shadow-medium"
             size="medium"
             onClick={() => console.log("test")}
           >
             MEDIUM
-          </BorderCta>
+          </Button>
         </div>
         <div>
-          <BorderCta
+          <Button
+            color="transparent-black"
             shadow="shadow-small"
             size="small"
             onClick={() => console.log("test")}
           >
             SMALL
-          </BorderCta>
+          </Button>
         </div>
       </div>
     </div>

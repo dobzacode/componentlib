@@ -5,13 +5,45 @@ const HEADING_SIZE = "3.2rem";
 const SUBHEADING_SIZE = "2.4rem";
 const BODY_SIZE = "1.8rem";
 
+const LIGHTNESS_FACTOR = "50%";
+
 const PRIMARY_COLOR_HSL = "218.54, 69%";
-const PRIMARY_COLOR_SHADOW = "218.54deg 69% 85%";
+const PRIMARY_COLOR_SHADOW = `218.54deg 69% ${LIGHTNESS_FACTOR}`;
 
 const SECONDARY_COLOR_HSL = "44, 100%";
-const SECONDARY_COLOR_SHADOW = "44deg 100% 85% ";
+const SECONDARY_COLOR_SHADOW = `44deg 100% ${LIGHTNESS_FACTOR} `;
 
 const TERTIARY_COLOR_HSL = "159, 93.2%";
+const TERTIARY_COLOR_SHADOW = `159deg 93.2% ${LIGHTNESS_FACTOR} `;
+
+const BLACK_COLOR_SHADOW = `0deg 0% ${LIGHTNESS_FACTOR}`;
+
+function lowShadow(color) {
+  return `0.8px 0.6px 1px hsl(${color} / 0.44),
+  1.3px 0.9px 1.5px -1.8px hsl(${color} / 0.36),
+  3.2px 2.4px 3.9px -3.5px hsl(${color} / 0.27)`;
+}
+
+function mediumShadow(color) {
+  return `0.8px 0.6px 1px hsl(${color} / 0.37),
+  1.7px 1.3px 2.1px -0.9px hsl(${color} / 0.33),
+  3.5px 2.6px 4.2px -1.8px hsl(${color} / 0.28),
+  7.8px 5.8px 9.4px -2.7px hsl(${color} / 0.24),
+  15.9px 11.8px 19.2px -3.5px hsl(${color} / 0.2)`;
+}
+
+function highShadow(color) {
+  return `0.8px 0.6px 1px hsl(${color} / 0.35),
+  2.5px 1.9px 3px -0.4px hsl(${color} / 0.32),
+  4.5px 3.3px 5.4px -0.8px hsl(${color} / 0.3),
+  7.2px 5.4px 8.7px -1.2px hsl(${color} / 0.28),
+  11.4px 8.5px 13.8px -1.6px hsl(${color} / 0.26),
+  17.7px 13.2px 21.4px -2px hsl(${color} / 0.24),
+  26.6px 19.8px 32.1px -2.4px hsl(${color} / 0.22),
+  38.9px 29px 46.9px -2.8px hsl(${color} / 0.2),
+  55px 41px 66.4px -3.2px hsl(${color} / 0.18),
+  75.7px 56.4px 91.3px -3.5px hsl(${color} / 0.16)`;
+}
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -103,42 +135,19 @@ module.exports = {
         "extra-small": parseFloat(SUBHEADING_SIZE) - 1.6 + "rem",
       },
       boxShadow: {
-        "primary-low": `0.2px 0.3px 0.4px hsl(${PRIMARY_COLOR_SHADOW} / 0.16),
-    0.4px 0.5px 0.8px -0.9px hsl(${PRIMARY_COLOR_SHADOW} / 0.2),
-    0.8px 1.1px 1.7px -1.9px hsl(${PRIMARY_COLOR_SHADOW} / 0.23);`,
-        "primary-medium": `0.2px 0.3px 0.4px hsl(${PRIMARY_COLOR_SHADOW} / 0.14),
-    0.6px 0.9px 1.3px -0.5px hsl(${PRIMARY_COLOR_SHADOW} / 0.15),
-    1.1px 1.6px 2.4px -0.9px hsl(${PRIMARY_COLOR_SHADOW} / 0.17),
-    2.1px 2.9px 4.4px -1.4px hsl(${PRIMARY_COLOR_SHADOW} / 0.19),
-    3.9px 5.4px 8.1px -1.9px hsl(${PRIMARY_COLOR_SHADOW} / 0.2);`,
-        "primary-high": `
-    0.2px 0.3px 0.4px hsl(${PRIMARY_COLOR_SHADOW} / 0.14),
-    1px 1.4px 2.1px -0.2px hsl(${PRIMARY_COLOR_SHADOW} / 0.15),
-    1.7px 2.5px 3.7px -0.5px hsl(${PRIMARY_COLOR_SHADOW} / 0.16),
-    2.6px 3.7px 5.5px -0.7px hsl(${PRIMARY_COLOR_SHADOW} / 0.17),
-    3.8px 5.3px 7.9px -0.9px hsl(${PRIMARY_COLOR_SHADOW} / 0.18),
-    5.4px 7.6px 11.3px -1.2px hsl(${PRIMARY_COLOR_SHADOW} / 0.19),
-    7.7px 10.8px 16.1px -1.4px hsl(${PRIMARY_COLOR_SHADOW} / 0.2),
-    10.8px 15.2px 22.7px -1.7px hsl(${PRIMARY_COLOR_SHADOW} / 0.21),
-    14.9px 21px 31.3px -1.9px hsl(${PRIMARY_COLOR_SHADOW} / 0.22);`,
-        "secondary-low": `0.2px 0.3px 0.4px hsl(${SECONDARY_COLOR_SHADOW} / 0.16),
-    0.4px 0.5px 0.8px -0.9px hsl(${SECONDARY_COLOR_SHADOW} / 0.2),
-    0.8px 1.1px 1.7px -1.9px hsl(${SECONDARY_COLOR_SHADOW} / 0.23);`,
-        "secondary-medium": `0.2px 0.3px 0.4px hsl(${SECONDARY_COLOR_SHADOW} / 0.14),
-    0.6px 0.9px 1.3px -0.5px hsl(${SECONDARY_COLOR_SHADOW} / 0.15),
-    1.1px 1.6px 2.4px -0.9px hsl(${SECONDARY_COLOR_SHADOW} / 0.17),
-    2.1px 2.9px 4.4px -1.4px hsl(${SECONDARY_COLOR_SHADOW} / 0.19),
-    3.9px 5.4px 8.1px -1.9px hsl(${SECONDARY_COLOR_SHADOW} / 0.2);`,
-        "secondary-high": `
-    0.2px 0.3px 0.4px hsl(${SECONDARY_COLOR_SHADOW} / 0.14),
-    1px 1.4px 2.1px -0.2px hsl(${SECONDARY_COLOR_SHADOW} / 0.15),
-    1.7px 2.5px 3.7px -0.5px hsl(${SECONDARY_COLOR_SHADOW} / 0.16),
-    2.6px 3.7px 5.5px -0.7px hsl(${SECONDARY_COLOR_SHADOW} / 0.17),
-    3.8px 5.3px 7.9px -0.9px hsl(${SECONDARY_COLOR_SHADOW} / 0.18),
-    5.4px 7.6px 11.3px -1.2px hsl(${SECONDARY_COLOR_SHADOW} / 0.19),
-    7.7px 10.8px 16.1px -1.4px hsl(${SECONDARY_COLOR_SHADOW} / 0.2),
-    10.8px 15.2px 22.7px -1.7px hsl(${SECONDARY_COLOR_SHADOW} / 0.21),
-    14.9px 21px 31.3px -1.9px hsl(${SECONDARY_COLOR_SHADOW} / 0.22);`,
+        // ...
+        "primary-low": lowShadow(PRIMARY_COLOR_SHADOW),
+        "primary-medium": mediumShadow(PRIMARY_COLOR_SHADOW),
+        "primary-high": highShadow(PRIMARY_COLOR_SHADOW),
+        "secondary-low": lowShadow(SECONDARY_COLOR_SHADOW),
+        "secondary-medium": mediumShadow(SECONDARY_COLOR_SHADOW),
+        "secondary-high": highShadow(SECONDARY_COLOR_SHADOW),
+        "tertiary-low": lowShadow(TERTIARY_COLOR_SHADOW),
+        "tertiary-medium": mediumShadow(TERTIARY_COLOR_SHADOW),
+        "tertiary-high": highShadow(TERTIARY_COLOR_SHADOW),
+        low: lowShadow(BLACK_COLOR_SHADOW),
+        medium: mediumShadow(BLACK_COLOR_SHADOW),
+        high: highShadow(BLACK_COLOR_SHADOW),
       },
     },
   },

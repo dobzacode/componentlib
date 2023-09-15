@@ -3,9 +3,10 @@
 import { ChangeEvent, FormEvent, useState } from "react";
 import Input from "./form/Input";
 import Label from "./form/Label";
-import PrimaryCta from "./button/PrimaryCta";
+
 import H1 from "./text/H1";
 import Field from "./form/Field";
+import Button from "./button/Button";
 
 interface FormData {
   nom: string;
@@ -40,7 +41,7 @@ export default function Form({
 
   return (
     <div
-      className={`flex flex-col gap-medium items-center ${bgColor} rounded-extra-small shadow-primary-high border border-primary5 box-content`}
+      className={`flex flex-col gap-medium items-center ${bgColor} rounded-extra-small shadow-primary-medium border border-primary5 `}
     >
       {title && (
         <H1
@@ -48,7 +49,7 @@ export default function Form({
           textColor="text-primary0 "
           bgColor="bg-primary40"
           padding="py-small px-sub-large"
-          rounded="rounded-t-extra-small "
+          rounded="rounded-t-extra-small"
         >
           {title}
         </H1>
@@ -75,9 +76,14 @@ export default function Form({
           value={formData.email}
           onChange={handleChange}
         ></Field>
-        <PrimaryCta type="submit" size="small" margin="mx-large mt-small">
+        <Button
+          type="submit"
+          size="small"
+          color="primary"
+          margin="mx-large mt-small"
+        >
           ENVOYER
-        </PrimaryCta>
+        </Button>
       </form>
     </div>
   );
