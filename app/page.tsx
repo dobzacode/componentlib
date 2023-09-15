@@ -1,5 +1,6 @@
 import Form from "@/components/Form";
 import AllButton from "@/components/button/AllButton";
+import DivImage from "@/components/divImage/divImage";
 import H1 from "@/components/text/H1";
 import H2 from "@/components/text/H2";
 import H3 from "@/components/text/H3";
@@ -24,8 +25,15 @@ export default function Home() {
         </P>
       </div>
       <AllButton></AllButton>
-      <div className="flex flex-col gap-medium bg-white w-full items-center py-large">
+      <div className="flex justify-center gap-medium bg-white w-full items-center py-large px-40">
         <Form bgColor="bg-primary5/[.5]" title="Formulaire de contact"></Form>
+        <DivImage
+          src="https://placehold.co/600x400"
+          dimension="h-[400px] w-[400px]"
+          rounded="rounded-extraSmall"
+          alt="alt"
+          sizes="50vw"
+        ></DivImage>
       </div>
     </main>
   );

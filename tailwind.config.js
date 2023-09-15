@@ -84,7 +84,16 @@ module.exports = {
         medium: SUBHEADING_SIZE,
         subMedium: parseFloat(SUBHEADING_SIZE) - 0.4 + "rem",
         small: parseFloat(SUBHEADING_SIZE) - 0.8 + "rem",
-        extraSmall: parseFloat(SUBHEADING_SIZE) - 1.2 + "rem",
+        extraSmall: parseFloat(SUBHEADING_SIZE) - 1.6 + "rem",
+      },
+      borderRadius: {
+        extraLarge: HEADING_EXTRA_LARGE_SIZE,
+        large: HEADING_LARGE_SIZE,
+        subLarge: HEADING_SIZE,
+        medium: SUBHEADING_SIZE,
+        subMedium: parseFloat(SUBHEADING_SIZE) - 0.4 + "rem",
+        small: parseFloat(SUBHEADING_SIZE) - 0.8 + "rem",
+        extraSmall: parseFloat(SUBHEADING_SIZE) - 1.6 + "rem",
       },
       boxShadow: {
         low: `0.2px 0.3px 0.4px hsl(${PRIMARY_COLOR_SHADOW} / 0.16),

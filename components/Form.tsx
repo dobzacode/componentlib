@@ -40,7 +40,7 @@ export default function Form({
 
   return (
     <div
-      className={`flex flex-col gap-medium items-center ${bgColor} rounded-b-lg shadow-high`}
+      className={`flex flex-col gap-medium items-center ${bgColor} rounded-b-extraSmall shadow-high`}
     >
       {title && (
         <H1
@@ -48,7 +48,7 @@ export default function Form({
           textColor="text-primary0 "
           bgColor="bg-primary40"
           padding="py-small px-subLarge"
-          rounded="rounded-t-lg"
+          rounded="rounded-t-extraSmall"
         >
           {title}
         </H1>
@@ -81,6 +81,7 @@ export default function Form({
           marginY="mt-small"
           bgColor="bg-primary40"
           textColor="text-primary0 "
+          shadow="shadow-medium"
         >
           ENVOYER
         </PrimaryCta>

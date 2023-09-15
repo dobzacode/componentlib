@@ -14,8 +14,9 @@ interface ButtonProps {
   onClick?: React.MouseEventHandler<HTMLButtonElement>;
   children: string | JSX.Element;
   type?: "button" | "submit" | "reset";
-  marginX?: string;
-  marginY?: string;
+
+  margin?: string;
+  shadow?: string;
 }
 
 export default function Button({
@@ -29,8 +30,8 @@ export default function Button({
   border,
   textSize,
   type,
-  marginX,
-  marginY,
+  margin,
+  shadow,
 }: ButtonProps) {
   return (
     <button
@@ -40,7 +41,7 @@ export default function Button({
         bgColor ? bgColor : ""
       } ${textColor} ${paddingY} ${paddingX} ${rounded ? rounded : ""} ${
         border ? border : ""
-      } ${textSize} ${marginX ? marginX : ""} ${marginY ? marginY : ""}`}
+      } ${textSize} ${margin ? margin : ""}  ${shadow ? shadow : ""}`}
     >
       {children}
     </button>
