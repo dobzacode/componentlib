@@ -30,7 +30,7 @@ export default function Header({
     return (
       <Link href="/">
         <H2 type={logoType} textColor={logoColor}>
-          MY SYSTEM
+          DESIGN SYSTEM
         </H2>
       </Link>
     );

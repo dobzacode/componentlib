@@ -23,7 +23,7 @@ export default function Home() {
           Heading
         </H2>
         <H3 type="sub-heading" textColor="text-neutral80">
-          Sub heading
+          Sub-heading
         </H3>
         <P type="body" textColor="text-neutral80">
           Body text
