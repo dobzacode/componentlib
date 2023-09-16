@@ -59,13 +59,41 @@ export default function Button({
     }
   };
 
+  const finalShadow = () => {
+    // shadow-primary-high
+    // shadow-primary-medium
+    // shadow-primary-low
+    // shadow-secondary-high
+    // shadow-secondary-medium
+    // shadow-secondary-low
+    // shadow-tertiary-high
+    // shadow-tertiary-medium
+    // shadow-tertiary-low
+    // shadow-info-high
+    // shadow-info-medium
+    // shadow-info-low
+    // shadow-success-high
+    // shadow-success-medium
+    // shadow-success-low
+    // shadow-error-high
+    // shadow-error-medium
+    // shadow-error-low
+    // shadow-warning-high
+    // shadow-warning-medium
+    // shadow-warning-low
+    // shadow-neutral-high
+    // shadow-neutral-medium
+    // shadow-neutral-low
+    return `shadow-${color}-${shadow}`;
+  };
+
   const rounded = "rounded-extra-small";
 
   return (
     <button
       onClick={onClick ? onClick : () => console.log()}
       type={type ? type : "button"}
-      className={`   ${rounded} ${finalcolor()} button--${size}  ${margin}  ${`shadow-${color}-${shadow}`} `}
+      className={`   ${rounded} ${finalcolor()} button--${size}  ${margin}  ${finalShadow()} `}
     >
       {children}
     </button>

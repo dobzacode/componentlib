@@ -22,6 +22,7 @@ export default function RootLayout({
       <body className="flex flex-col justify-between  gap-sub-large relative min-h-screen">
         <Header
           height="h-[150px]"
+          //top-[150px]
           textColor="text-neutral80"
           textType="sub-heading"
           logoColor="text-neutral80"

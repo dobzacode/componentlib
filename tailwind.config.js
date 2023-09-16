@@ -44,8 +44,8 @@ const WARNING_COLOR_SHADOW = `60deg ${
 }% ${LIGHTNESS_FACTOR} `;
 
 const NEUTRAL_COLOR_HSL = `${PRIMARY_COLOR_HSL.split(",")[0]}, 15%`;
-const NEUTRAL_COLOR_SHADOW = `${PRIMARY_COLOR_HSL.split(",")[0]} 60deg ${
-  90 - SATURATION_FACTOR
+const NEUTRAL_COLOR_SHADOW = `${PRIMARY_COLOR_HSL.split(",")[0]}deg ${
+  20 - SATURATION_FACTOR
 }% ${LIGHTNESS_FACTOR} `;
 
 const BLACK_COLOR_SHADOW = `0deg 0% ${LIGHTNESS_FACTOR}`;
@@ -86,60 +86,6 @@ module.exports = {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    boxShadow: {
-      "primary-low": lowShadow(PRIMARY_COLOR_SHADOW),
-      "primary-medium": mediumShadow(PRIMARY_COLOR_SHADOW),
-      "primary-high": highShadow(PRIMARY_COLOR_SHADOW),
-      "secondary-low": lowShadow(SECONDARY_COLOR_SHADOW),
-      "secondary-medium": mediumShadow(SECONDARY_COLOR_SHADOW),
-      "secondary-high": highShadow(SECONDARY_COLOR_SHADOW),
-      "tertiary-low": lowShadow(TERTIARY_COLOR_SHADOW),
-      "tertiary-medium": mediumShadow(TERTIARY_COLOR_SHADOW),
-      "tertiary-high": highShadow(TERTIARY_COLOR_SHADOW),
-      "success-low": lowShadow(SUCCESS_COLOR_SHADOW),
-      "success-medium": mediumShadow(SUCCESS_COLOR_SHADOW),
-      "success-high": highShadow(SUCCESS_COLOR_SHADOW),
-      "error-low": lowShadow(ERROR_COLOR_SHADOW),
-      "error-medium": mediumShadow(ERROR_COLOR_SHADOW),
-      "error-high": highShadow(ERROR_COLOR_SHADOW),
-      "warning-low": lowShadow(WARNING_COLOR_SHADOW),
-      "warning-medium": mediumShadow(WARNING_COLOR_SHADOW),
-      "warning-high": highShadow(WARNING_COLOR_SHADOW),
-      "info-low": lowShadow(INFO_COLOR_SHADOW),
-      "info-medium": mediumShadow(INFO_COLOR_SHADOW),
-      "info-high": highShadow(INFO_COLOR_SHADOW),
-      "neutral-low": lowShadow(NEUTRAL_COLOR_SHADOW),
-      "neutral-medium": mediumShadow(NEUTRAL_COLOR_SHADOW),
-      "neutral-high": highShadow(NEUTRAL_COLOR_SHADOW),
-      low: lowShadow(BLACK_COLOR_SHADOW),
-      medium: mediumShadow(BLACK_COLOR_SHADOW),
-      high: highShadow(BLACK_COLOR_SHADOW),
-    },
-    transitionDuration: {
-      "extra-fast": "100ms",
-      fast: "200ms",
-      medium: "400ms",
-      slow: "600ms",
-      "extra-slow": "800ms",
-      slowest: "1000ms",
-    },
-    fontSize: {
-      "heading-extra-large": HEADING_EXTRA_LARGE_SIZE,
-      "heading-large": HEADING_LARGE_SIZE,
-      "heading-sub-large": HEADING_SUBLARGE_SIZE,
-      heading: HEADING_SIZE,
-      "sub-heading": SUBHEADING_SIZE,
-      body: BODY_SIZE,
-    },
-    spacing: {
-      "extra-large": HEADING_EXTRA_LARGE_SIZE,
-      large: HEADING_LARGE_SIZE,
-      "sub-large": HEADING_SIZE,
-      medium: SUBHEADING_SIZE,
-      "sub-medium": parseFloat(SUBHEADING_SIZE) - 0.4 + "rem",
-      small: parseFloat(SUBHEADING_SIZE) - 0.8 + "rem",
-      "extra-small": parseFloat(SUBHEADING_SIZE) - 1.6 + "rem",
-    },
     screens: {
       "mobile-medium": "370px",
       "mobile-small": "320px",
@@ -254,7 +200,14 @@ module.exports = {
         neutral90: `hsl(${NEUTRAL_COLOR_HSL}, 10%)`,
         neutral100: `hsl(${NEUTRAL_COLOR_HSL}, 0%)`,
       },
-
+      fontSize: {
+        "heading-extra-large": HEADING_EXTRA_LARGE_SIZE,
+        "heading-large": HEADING_LARGE_SIZE,
+        "heading-sub-large": HEADING_SUBLARGE_SIZE,
+        heading: HEADING_SIZE,
+        "sub-heading": SUBHEADING_SIZE,
+        body: BODY_SIZE,
+      },
       lineHeight: {
         "heading-extra-large": HEADING_EXTRA_LARGE_SIZE,
         "heading-large": HEADING_LARGE_SIZE,
@@ -263,7 +216,15 @@ module.exports = {
         "sub-heading": SUBHEADING_SIZE,
         body: BODY_SIZE,
       },
-
+      spacing: {
+        "extra-large": HEADING_EXTRA_LARGE_SIZE,
+        large: HEADING_LARGE_SIZE,
+        "sub-large": HEADING_SIZE,
+        medium: SUBHEADING_SIZE,
+        "sub-medium": parseFloat(SUBHEADING_SIZE) - 0.4 + "rem",
+        small: parseFloat(SUBHEADING_SIZE) - 0.8 + "rem",
+        "extra-small": parseFloat(SUBHEADING_SIZE) - 1.6 + "rem",
+      },
       borderRadius: {
         "extra-large": HEADING_EXTRA_LARGE_SIZE,
         large: HEADING_LARGE_SIZE,
@@ -272,6 +233,43 @@ module.exports = {
         "sub-medium": parseFloat(SUBHEADING_SIZE) - 0.4 + "rem",
         small: parseFloat(SUBHEADING_SIZE) - 0.8 + "rem",
         "extra-small": parseFloat(SUBHEADING_SIZE) - 1.6 + "rem",
+      },
+      boxShadow: {
+        "primary-low": lowShadow(PRIMARY_COLOR_SHADOW),
+        "primary-medium": mediumShadow(PRIMARY_COLOR_SHADOW),
+        "primary-high": highShadow(PRIMARY_COLOR_SHADOW),
+        "secondary-low": lowShadow(SECONDARY_COLOR_SHADOW),
+        "secondary-medium": mediumShadow(SECONDARY_COLOR_SHADOW),
+        "secondary-high": highShadow(SECONDARY_COLOR_SHADOW),
+        "tertiary-low": lowShadow(TERTIARY_COLOR_SHADOW),
+        "tertiary-medium": mediumShadow(TERTIARY_COLOR_SHADOW),
+        "tertiary-high": highShadow(TERTIARY_COLOR_SHADOW),
+        "success-low": lowShadow(SUCCESS_COLOR_SHADOW),
+        "success-medium": mediumShadow(SUCCESS_COLOR_SHADOW),
+        "success-high": highShadow(SUCCESS_COLOR_SHADOW),
+        "error-low": lowShadow(ERROR_COLOR_SHADOW),
+        "error-medium": mediumShadow(ERROR_COLOR_SHADOW),
+        "error-high": highShadow(ERROR_COLOR_SHADOW),
+        "warning-low": lowShadow(WARNING_COLOR_SHADOW),
+        "warning-medium": mediumShadow(WARNING_COLOR_SHADOW),
+        "warning-high": highShadow(WARNING_COLOR_SHADOW),
+        "info-low": lowShadow(INFO_COLOR_SHADOW),
+        "info-medium": mediumShadow(INFO_COLOR_SHADOW),
+        "info-high": highShadow(INFO_COLOR_SHADOW),
+        "neutral-low": lowShadow(NEUTRAL_COLOR_SHADOW),
+        "neutral-medium": mediumShadow(NEUTRAL_COLOR_SHADOW),
+        "neutral-high": highShadow(NEUTRAL_COLOR_SHADOW),
+        low: lowShadow(BLACK_COLOR_SHADOW),
+        medium: mediumShadow(BLACK_COLOR_SHADOW),
+        high: highShadow(BLACK_COLOR_SHADOW),
+      },
+      transitionDuration: {
+        "extra-fast": "100ms",
+        fast: "200ms",
+        medium: "400ms",
+        slow: "600ms",
+        "extra-slow": "800ms",
+        slowest: "1000ms",
       },
     },
   },
