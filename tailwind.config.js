@@ -23,6 +23,28 @@ const TERTIARY_COLOR_SHADOW = `159deg ${
   93.2 - SATURATION_FACTOR
 }% ${LIGHTNESS_FACTOR} `;
 
+const SUCCESS_COLOR_HSL = "120, 61%";
+const SUCCESS_COLOR_SHADOW = `120deg ${
+  61 - SATURATION_FACTOR
+}% ${LIGHTNESS_FACTOR} `;
+
+const ERROR_COLOR_HSL = "0, 80%";
+const ERROR_COLOR_SHADOW = `0deg ${
+  80 - SATURATION_FACTOR
+}% ${LIGHTNESS_FACTOR} `;
+
+const INFO_COLOR_HSL = "210.54, 69%";
+const INFO_COLOR_SHADOW = `218.54deg ${
+  70 - SATURATION_FACTOR
+}% ${LIGHTNESS_FACTOR} `;
+
+const WARNING_COLOR_HSL = "60, 90%";
+const WARNING_COLOR_SHADOW = `60deg ${
+  90 - SATURATION_FACTOR
+}% ${LIGHTNESS_FACTOR} `;
+
+const NEUTRAL_COLOR_HSL = `${PRIMARY_COLOR_HSL.split(",")[0]}, 15%`;
+
 const BLACK_COLOR_SHADOW = `0deg 0% ${LIGHTNESS_FACTOR}`;
 
 function lowShadow(color) {
@@ -71,18 +93,19 @@ module.exports = {
     },
     extend: {
       colors: {
-        primary0: `hsl(${PRIMARY_COLOR_HSL}, 99% )`,
+        primary1: `hsl(${PRIMARY_COLOR_HSL}, 99% )`,
         primary5: `hsl(${PRIMARY_COLOR_HSL}, 95%)`,
         primary10: `hsl(${PRIMARY_COLOR_HSL}, 90%)`,
         primary20: `hsl(${PRIMARY_COLOR_HSL}, 80%)`,
         primary30: `hsl(${PRIMARY_COLOR_HSL}, 70%)`,
         primary40: `hsl(${PRIMARY_COLOR_HSL}, 60%)`,
         primary50: `hsl(${PRIMARY_COLOR_HSL}, 50%)`,
-        primary60: `hsl(${PRIMARY_COLOR_HSL},40%)`,
-        primary70: `hsl(${PRIMARY_COLOR_HSL}, $30%)`,
+        primary60: `hsl(${PRIMARY_COLOR_HSL}, 40%)`,
+        primary70: `hsl(${PRIMARY_COLOR_HSL}, 30%)`,
         primary80: `hsl(${PRIMARY_COLOR_HSL}, 20%)`,
         primary90: `hsl(${PRIMARY_COLOR_HSL}, 10%)`,
         primary100: `hsl(${PRIMARY_COLOR_HSL}, 0%)`,
+
         secondary0: `hsl(${SECONDARY_COLOR_HSL}, 99%)`,
         secondary5: `hsl(${SECONDARY_COLOR_HSL}, 95%)`,
         secondary10: `hsl(${SECONDARY_COLOR_HSL}, 90%)`,
@@ -95,7 +118,8 @@ module.exports = {
         secondary80: `hsl(${SECONDARY_COLOR_HSL}, 20%)`,
         secondary90: `hsl(${SECONDARY_COLOR_HSL}, 10%)`,
         secondary100: `hsl(${SECONDARY_COLOR_HSL}, 0%)`,
-        tertiary0: `hsl(${TERTIARY_COLOR_HSL}, 99%)`,
+
+        tertiary1: `hsl(${TERTIARY_COLOR_HSL}, 99%)`,
         tertiary5: `hsl(${TERTIARY_COLOR_HSL}, 95%)`,
         tertiary10: `hsl(${TERTIARY_COLOR_HSL}, 90%)`,
         tertiary20: `hsl(${TERTIARY_COLOR_HSL}, 80%)`,
@@ -107,6 +131,71 @@ module.exports = {
         tertiary80: `hsl(${TERTIARY_COLOR_HSL}, 20%)`,
         tertiary90: `hsl(${TERTIARY_COLOR_HSL}, 10%)`,
         tertiary100: `hsl(${TERTIARY_COLOR_HSL}, 0%)`,
+
+        success1: `hsl(${SUCCESS_COLOR_HSL}, 99%)`,
+        success5: `hsl(${SUCCESS_COLOR_HSL}, 95%)`,
+        success10: `hsl(${SUCCESS_COLOR_HSL}, 90%)`,
+        success20: `hsl(${SUCCESS_COLOR_HSL}, 80%)`,
+        success30: `hsl(${SUCCESS_COLOR_HSL}, 70%)`,
+        success40: `hsl(${SUCCESS_COLOR_HSL}, 60%)`,
+        success50: `hsl(${SUCCESS_COLOR_HSL}, 50%)`,
+        success60: `hsl(${SUCCESS_COLOR_HSL}, 40%)`,
+        success70: `hsl(${SUCCESS_COLOR_HSL}, 30%)`,
+        success80: `hsl(${SUCCESS_COLOR_HSL}, 20%)`,
+        success90: `hsl(${SUCCESS_COLOR_HSL}, 10%)`,
+        success100: `hsl(${SUCCESS_COLOR_HSL}, 0%)`,
+
+        error1: `hsl(${ERROR_COLOR_HSL}, 99%)`,
+        error5: `hsl(${ERROR_COLOR_HSL}, 95%)`,
+        error10: `hsl(${ERROR_COLOR_HSL}, 90%)`,
+        error20: `hsl(${ERROR_COLOR_HSL}, 80%)`,
+        error30: `hsl(${ERROR_COLOR_HSL}, 70%)`,
+        error40: `hsl(${ERROR_COLOR_HSL}, 60%)`,
+        error50: `hsl(${ERROR_COLOR_HSL}, 50%)`,
+        error60: `hsl(${ERROR_COLOR_HSL}, 40%)`,
+        error70: `hsl(${ERROR_COLOR_HSL}, 30%)`,
+        error80: `hsl(${ERROR_COLOR_HSL}, 20%)`,
+        error90: `hsl(${ERROR_COLOR_HSL}, 10%)`,
+        error100: `hsl(${ERROR_COLOR_HSL}, 0%)`,
+
+        info1: `hsl(${INFO_COLOR_HSL}, 99%)`,
+        info5: `hsl(${INFO_COLOR_HSL}, 95%)`,
+        info10: `hsl(${INFO_COLOR_HSL}, 90%)`,
+        info20: `hsl(${INFO_COLOR_HSL}, 80%)`,
+        info30: `hsl(${INFO_COLOR_HSL}, 70%)`,
+        info40: `hsl(${INFO_COLOR_HSL}, 60%)`,
+        info50: `hsl(${INFO_COLOR_HSL}, 50%)`,
+        info60: `hsl(${INFO_COLOR_HSL}, 40%)`,
+        info70: `hsl(${INFO_COLOR_HSL}, 30%)`,
+        info80: `hsl(${INFO_COLOR_HSL}, 20%)`,
+        info90: `hsl(${INFO_COLOR_HSL}, 10%)`,
+        info100: `hsl(${INFO_COLOR_HSL}, 0%)`,
+
+        warning1: `hsl(${WARNING_COLOR_HSL}, 99%)`,
+        warning5: `hsl(${WARNING_COLOR_HSL}, 95%)`,
+        warning10: `hsl(${WARNING_COLOR_HSL}, 90%)`,
+        warning20: `hsl(${WARNING_COLOR_HSL}, 80%)`,
+        warning30: `hsl(${WARNING_COLOR_HSL}, 70%)`,
+        warning40: `hsl(${WARNING_COLOR_HSL}, 60%)`,
+        warning50: `hsl(${WARNING_COLOR_HSL}, 50%)`,
+        warning60: `hsl(${WARNING_COLOR_HSL}, 40%)`,
+        warning70: `hsl(${WARNING_COLOR_HSL}, 30%)`,
+        warning80: `hsl(${WARNING_COLOR_HSL}, 20%)`,
+        warning90: `hsl(${WARNING_COLOR_HSL}, 10%)`,
+        warning100: `hsl(${WARNING_COLOR_HSL}, 0%)`,
+
+        neutral1: `hsl(${NEUTRAL_COLOR_HSL}, 99%)`,
+        neutral5: `hsl(${NEUTRAL_COLOR_HSL}, 95%)`,
+        neutral10: `hsl(${NEUTRAL_COLOR_HSL}, 90%)`,
+        neutral20: `hsl(${NEUTRAL_COLOR_HSL}, 80%)`,
+        neutral30: `hsl(${NEUTRAL_COLOR_HSL}, 70%)`,
+        neutral40: `hsl(${NEUTRAL_COLOR_HSL}, 60%)`,
+        neutral50: `hsl(${NEUTRAL_COLOR_HSL}, 50%)`,
+        neutral60: `hsl(${NEUTRAL_COLOR_HSL}, 40%)`,
+        neutral70: `hsl(${NEUTRAL_COLOR_HSL}, 30%)`,
+        neutral80: `hsl(${NEUTRAL_COLOR_HSL}, 20%)`,
+        neutral90: `hsl(${NEUTRAL_COLOR_HSL}, 10%)`,
+        neutral100: `hsl(${NEUTRAL_COLOR_HSL}, 0%)`,
       },
       fontSize: {
         "heading-extra-large": HEADING_EXTRA_LARGE_SIZE,

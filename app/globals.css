@@ -28,7 +28,7 @@
 }
 
 .button--primary {
-  @apply text-primary0 bg-primary40;
+  @apply text-primary1 bg-primary40;
 }
 
 .button--large {

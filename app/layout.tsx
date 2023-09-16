@@ -19,17 +19,19 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="flex flex-col justify-between  gap-large relative ">
+      <body className="flex flex-col justify-between  gap-sub-large relative min-h-screen">
         <Header
           height="h-[150px]"
-          textColor="text-primary40"
-          logoColor="text-secondary40"
+          textColor="text-neutral80"
+          textType="sub-heading"
+          logoColor="text-neutral80"
+          logoType="heading--sub-large font-bold tracking-widest"
+          mobileTextType="sub-heading"
         ></Header>
         {children}
         <Footer
           height="h-[100px]"
           bgColor="bg-black"
-          margin="-mt-large"
           flex="flex items-center justify-center"
         ></Footer>
       </body>

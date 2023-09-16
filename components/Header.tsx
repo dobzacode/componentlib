@@ -3,13 +3,17 @@ import Nav from "./header/Nav";
 import NavLink from "./header/NavLink";
 import H2 from "./text/H2";
 import MobileNav from "./header/MobileNav";
+import Link from "next/link";
 
 interface HeaderProps {
   children?: ReactNode;
   height: string;
   bgColor?: string;
   logoColor?: string;
+  logoType?: string;
   textColor?: string;
+  textType?: string;
+  mobileTextType?: string;
 }
 
 export default function Header({
@@ -17,20 +21,25 @@ export default function Header({
   height,
   bgColor = "",
   textColor,
+  textType = "",
   logoColor,
+  logoType = "",
+  mobileTextType = "",
 }: HeaderProps) {
   const logo = () => {
     return (
-      <H2 type="heading--sub-large" textColor={logoColor}>
-        MY SYSTEM
-      </H2>
+      <Link href="/">
+        <H2 type={logoType} textColor={logoColor}>
+          MY SYSTEM
+        </H2>
+      </Link>
     );
   };
 
   const navlink = () => {
     return (
       <>
-        <NavLink href="/">Lien</NavLink>
+        <NavLink href="/color">Color</NavLink>
         <NavLink href="/">Lien</NavLink>
         <NavLink href="/">Lien</NavLink>
         <NavLink href="/">Lien</NavLink>
@@ -46,14 +55,14 @@ export default function Header({
       {children}
       <Nav
         navStyle="tablet:flex hidden gap-large items-center justify-between w-full mx-large "
-        navLinkStyle={`flex laptopL:gap-large laptop:gap-sub-large tablet:gap-small justify-center sub-heading ${textColor}`}
+        navLinkStyle={`flex laptopL:gap-large laptop:gap-sub-large tablet:gap-small justify-center ${textType} ${textColor}`}
         logo={logo()}
       >
         {navlink()}
       </Nav>
       <MobileNav
         navStyle="flex tablet:hidden gap-large items-center justify-between w-full mobile-large:mx-sub-large mx-small"
-        navLinkStyle={`flex flex-col gap-large justify-center heading font-normal mt-sub-large pl-8 ${textColor}`}
+        navLinkStyle={`flex flex-col gap-large justify-center ${mobileTextType} mt-sub-large pl-8 ${textColor}`}
         modalStyle={`h-screen bg-white w-screen duration-700`}
         height={height}
         logo={logo()}

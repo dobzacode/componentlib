@@ -8,7 +8,7 @@ interface DivImageProps {
   rounded?: string;
 }
 
-export default function DivImage({
+export default function ImageDiv({
   sizes,
   src,
   alt,
