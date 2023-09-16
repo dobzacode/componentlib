@@ -91,7 +91,7 @@ export default function Button({
 
   return (
     <button
-      onClick={onClick ? onClick : () => console.log()}
+      onClick={onClick}
       type={type ? type : "button"}
       className={`   ${rounded} ${finalcolor()} button--${size}  ${margin}  ${finalShadow()} `}
     >

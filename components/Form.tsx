@@ -1,7 +1,7 @@
 "use client";
 
 import { ChangeEvent, FormEvent, useState } from "react";
-import Input from "./form/Input";
+import Input from "./form/InputText";
 import Label from "./form/Label";
 
 import H1 from "./text/H1";
