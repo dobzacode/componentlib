@@ -15,7 +15,7 @@ export default function NavLink({ href, children }: NavLinkProps) {
   return (
     <li>
       <Link
-        className={` hover:bg-black hover:text-white px-8 py-4 rounded-lg`}
+        className={` hover:bg-black hover:text-white px-8 py-4 rounded-lg duration-medium ease-in`}
         href={href}
       >
         {children}

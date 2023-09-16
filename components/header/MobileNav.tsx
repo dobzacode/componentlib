@@ -14,8 +14,8 @@ interface NavProps {
 
 export default function MobileNav({
   logo,
-  navStyle,
-  navLinkStyle,
+  navStyle = "",
+  navLinkStyle = "",
   children,
   modalStyle,
   height,
@@ -23,10 +23,10 @@ export default function MobileNav({
   const [showMenu, setShowMenu] = useState<boolean>(false);
 
   return (
-    <nav className={navStyle ? navStyle : ""}>
+    <nav className={navStyle}>
       {logo ? logo : ""}
       <button onClick={() => setShowMenu(!showMenu)}>
-        <Icon path={mdiMenu} size={3.5} className="text-white"></Icon>
+        <Icon path={mdiMenu} size={3.5} className="text-primary40"></Icon>
       </button>
       <div
         className={`${modalStyle} absolute z-10 ${

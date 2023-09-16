@@ -5,14 +5,11 @@ interface H2Props {
   bgColor?: string;
 }
 
-export default function H2({ children, type, textColor, bgColor }: H2Props) {
-  return (
-    <h2
-      className={`${type} ${textColor ? textColor : ""} ${
-        bgColor ? bgColor : ""
-      } `}
-    >
-      {children}
-    </h2>
-  );
+export default function H2({
+  children,
+  type,
+  textColor = "",
+  bgColor = "",
+}: H2Props) {
+  return <h2 className={`${type} ${textColor} ${bgColor} `}>{children}</h2>;
 }

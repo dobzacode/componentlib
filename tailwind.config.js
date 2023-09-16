@@ -55,6 +55,7 @@ function highShadow(color) {
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   mode: "jit",
+  darkMode: "class",
   content: [
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
@@ -155,6 +156,14 @@ module.exports = {
         low: lowShadow(BLACK_COLOR_SHADOW),
         medium: mediumShadow(BLACK_COLOR_SHADOW),
         high: highShadow(BLACK_COLOR_SHADOW),
+      },
+      transitionDuration: {
+        "extra-fast": "100ms",
+        fast: "200ms",
+        medium: "400ms",
+        slow: "600ms",
+        "extra-slow": "800ms",
+        slowest: "1000ms",
       },
     },
   },

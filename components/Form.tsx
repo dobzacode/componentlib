@@ -16,7 +16,7 @@ interface FormData {
 
 export default function Form({
   title,
-  bgColor,
+  bgColor = "",
 }: {
   title?: string;
   bgColor?: string;
@@ -41,7 +41,7 @@ export default function Form({
 
   return (
     <div
-      className={`flex flex-col gap-medium items-center ${bgColor} rounded-extra-small shadow-primary-medium border border-primary5 `}
+      className={`flex flex-col gap-medium items-center ${bgColor} rounded-extra-small shadow-primary-medium `}
     >
       {title && (
         <H1

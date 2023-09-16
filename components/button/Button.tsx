@@ -4,7 +4,6 @@ import { ButtonHTMLAttributes, DetailedHTMLProps } from "react";
 
 interface ButtonProps {
   hover?: string;
-
   onClick?: React.MouseEventHandler<HTMLButtonElement>;
   children: string | JSX.Element;
   type?: "button" | "submit" | "reset";
@@ -25,9 +24,9 @@ export default function Button({
   onClick,
   children,
   color,
-  type,
-  margin,
-  shadow,
+  type = "button",
+  margin = "",
+  shadow = "",
   size,
 }: ButtonProps) {
   const finalcolor = () => {
@@ -55,11 +54,7 @@ export default function Button({
     <button
       onClick={onClick ? onClick : () => console.log()}
       type={type ? type : "button"}
-      className={`   ${
-        rounded ? rounded : ""
-      } ${finalcolor()} button--${size}  ${margin ? margin : ""}  ${
-        shadow ? shadow : ""
-      }`}
+      className={`   ${rounded} ${finalcolor()} button--${size}  ${margin}  ${shadow}`}
     >
       {children}
     </button>

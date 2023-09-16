@@ -7,46 +7,54 @@ import MobileNav from "./header/MobileNav";
 interface HeaderProps {
   children?: ReactNode;
   height: string;
-  bgColor: string;
+  bgColor?: string;
+  logoColor?: string;
+  textColor?: string;
 }
 
-const logo = () => {
-  return (
-    <H2 type="heading--sub-large" textColor="text-white">
-      MY SYSTEM
-    </H2>
-  );
-};
+export default function Header({
+  children,
+  height,
+  bgColor = "",
+  textColor,
+  logoColor,
+}: HeaderProps) {
+  const logo = () => {
+    return (
+      <H2 type="heading--sub-large" textColor={logoColor}>
+        MY SYSTEM
+      </H2>
+    );
+  };
 
-const navlink = () => {
-  return (
-    <>
-      <NavLink href="/">LIEN</NavLink>
-      <NavLink href="/">LIEN</NavLink>
-      <NavLink href="/">LIEN</NavLink>
-      <NavLink href="/">LIEN</NavLink>
-      <NavLink href="/">LIEN</NavLink>
-    </>
-  );
-};
+  const navlink = () => {
+    return (
+      <>
+        <NavLink href="/">Lien</NavLink>
+        <NavLink href="/">Lien</NavLink>
+        <NavLink href="/">Lien</NavLink>
+        <NavLink href="/">Lien</NavLink>
+        <NavLink href="/">Lien</NavLink>
+      </>
+    );
+  };
 
-export default function Header({ children, height, bgColor }: HeaderProps) {
   return (
     <header
       className={`${height} ${bgColor} flex items-center justify-center px-4  `}
     >
       {children}
       <Nav
-        navStyle="tablet:flex hidden gap-large items-center justify-around w-full mx-sub-large "
-        navLinkStyle="flex laptopL:gap-large laptop:gap-sub-large tablet:gap-small justify-center sub-heading text-white "
+        navStyle="tablet:flex hidden gap-large items-center justify-between w-full mx-large "
+        navLinkStyle={`flex laptopL:gap-large laptop:gap-sub-large tablet:gap-small justify-center sub-heading ${textColor}`}
         logo={logo()}
       >
         {navlink()}
       </Nav>
       <MobileNav
         navStyle="flex tablet:hidden gap-large items-center justify-between w-full mobile-large:mx-sub-large mx-small"
-        navLinkStyle="flex flex-col gap-large justify-center heading font-normal text-black mt-sub-large pl-8"
-        modalStyle={`h-screen bg-white w-full duration-700`}
+        navLinkStyle={`flex flex-col gap-large justify-center heading font-normal mt-sub-large pl-8 ${textColor}`}
+        modalStyle={`h-screen bg-white w-screen duration-700`}
         height={height}
         logo={logo()}
       >

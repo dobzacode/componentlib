@@ -5,14 +5,13 @@ interface H3Props {
   type?: string;
 }
 
-export default function H3({ children, textColor, bgColor, type }: H3Props) {
+export default function H3({
+  children,
+  textColor = "",
+  bgColor = "",
+  type = "",
+}: H3Props) {
   return (
-    <h3
-      className={`${type} ${textColor ? textColor : ""} ${
-        bgColor ? bgColor : ""
-      } ${type ? type : ""}`}
-    >
-      {children}
-    </h3>
+    <h3 className={`${type} ${textColor} ${bgColor} ${type}`}>{children}</h3>
   );
 }

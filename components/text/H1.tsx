@@ -10,17 +10,13 @@ interface H1Props {
 export default function H1({
   children,
   type,
-  textColor,
-  bgColor,
-  padding,
-  rounded,
+  textColor = "",
+  bgColor = "",
+  padding = "",
+  rounded = "",
 }: H1Props) {
   return (
-    <h1
-      className={`${type} ${textColor ? textColor : ""} ${
-        bgColor ? bgColor : ""
-      } ${padding ? padding : ""} ${rounded ? rounded : ""}`}
-    >
+    <h1 className={`${type} ${textColor} ${bgColor} ${padding} ${rounded}`}>
       {children}
     </h1>
   );

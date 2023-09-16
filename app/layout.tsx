@@ -20,7 +20,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="flex flex-col justify-between  gap-large relative ">
-        <Header bgColor="bg-black" height="h-[150px]"></Header>
+        <Header
+          height="h-[150px]"
+          textColor="text-primary40"
+          logoColor="text-secondary40"
+        ></Header>
         {children}
         <Footer
           height="h-[100px]"

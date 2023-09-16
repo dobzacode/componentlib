@@ -5,14 +5,11 @@ interface PProps {
   type: "body";
 }
 
-export default function P({ children, type, textColor, bgColor }: PProps) {
-  return (
-    <p
-      className={`${type} ${textColor ? textColor : ""} ${
-        bgColor ? bgColor : ""
-      }`}
-    >
-      {children}
-    </p>
-  );
+export default function P({
+  children,
+  type,
+  textColor = "",
+  bgColor = "",
+}: PProps) {
+  return <p className={`${type} ${textColor} ${bgColor}`}>{children}</p>;
 }

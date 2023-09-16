@@ -10,12 +10,12 @@ interface NavProps {
 
 export default function Nav({
   logo,
-  navStyle,
-  navLinkStyle,
+  navStyle = "",
+  navLinkStyle = "",
   children,
 }: NavProps) {
   return (
-    <nav className={navStyle ? navStyle : ""}>
+    <nav className={navStyle}>
       {logo ? logo : ""}
       <ul className={`${navLinkStyle}`}>{children}</ul>
     </nav>
