@@ -4,7 +4,7 @@ import Button from "./Button";
 
 export default function AllButton() {
   return (
-    <div className="flex gap-sub-large justify-center">
+    <div className="flex gap-sub-large justify-center flex-wrap mx-large">
       <div className="flex flex-col gap-small">
         <div>
           <Button
@@ -41,7 +41,7 @@ export default function AllButton() {
         <div>
           <Button
             color="secondary"
-            shadow="shhigh"
+            shadow="high"
             size="large"
             onClick={() => console.log("test")}
           >
@@ -51,7 +51,7 @@ export default function AllButton() {
         <div>
           <Button
             color="secondary"
-            shadow="shmedium"
+            shadow="medium"
             size="medium"
             onClick={() => console.log("test")}
           >
@@ -61,7 +61,7 @@ export default function AllButton() {
         <div>
           <Button
             color="secondary"
-            shadow="shsmall"
+            shadow="small"
             size="small"
             onClick={() => console.log("test")}
           >
@@ -93,6 +93,166 @@ export default function AllButton() {
         <div>
           <Button
             color="tertiary"
+            shadow="small"
+            size="small"
+            onClick={() => console.log("test")}
+          >
+            SMALL
+          </Button>
+        </div>
+      </div>
+      <div className="flex flex-col gap-small">
+        <div>
+          <Button
+            color="error"
+            shadow="high"
+            size="large"
+            onClick={() => console.log("test")}
+          >
+            LARGE
+          </Button>
+        </div>
+        <div>
+          <Button
+            color="error"
+            shadow="medium"
+            size="medium"
+            onClick={() => console.log("test")}
+          >
+            MEDIUM
+          </Button>
+        </div>
+        <div>
+          <Button
+            color="error"
+            shadow="small"
+            size="small"
+            onClick={() => console.log("test")}
+          >
+            SMALL
+          </Button>
+        </div>
+      </div>
+      <div className="flex flex-col gap-small">
+        <div>
+          <Button
+            color="success"
+            shadow="high"
+            size="large"
+            onClick={() => console.log("test")}
+          >
+            LARGE
+          </Button>
+        </div>
+        <div>
+          <Button
+            color="success"
+            shadow="medium"
+            size="medium"
+            onClick={() => console.log("test")}
+          >
+            MEDIUM
+          </Button>
+        </div>
+        <div>
+          <Button
+            color="success"
+            shadow="small"
+            size="small"
+            onClick={() => console.log("test")}
+          >
+            SMALL
+          </Button>
+        </div>
+      </div>
+      <div className="flex flex-col gap-small">
+        <div>
+          <Button
+            color="info"
+            shadow="high"
+            size="large"
+            onClick={() => console.log("test")}
+          >
+            LARGE
+          </Button>
+        </div>
+        <div>
+          <Button
+            color="info"
+            shadow="medium"
+            size="medium"
+            onClick={() => console.log("test")}
+          >
+            MEDIUM
+          </Button>
+        </div>
+        <div>
+          <Button
+            color="info"
+            shadow="small"
+            size="small"
+            onClick={() => console.log("test")}
+          >
+            SMALL
+          </Button>
+        </div>
+      </div>
+      <div className="flex flex-col gap-small">
+        <div>
+          <Button
+            color="warning"
+            shadow="high"
+            size="large"
+            onClick={() => console.log("test")}
+          >
+            LARGE
+          </Button>
+        </div>
+        <div>
+          <Button
+            color="warning"
+            shadow="medium"
+            size="medium"
+            onClick={() => console.log("test")}
+          >
+            MEDIUM
+          </Button>
+        </div>
+        <div>
+          <Button
+            color="warning"
+            shadow="small"
+            size="small"
+            onClick={() => console.log("test")}
+          >
+            SMALL
+          </Button>
+        </div>
+      </div>
+      <div className="flex flex-col gap-small">
+        <div>
+          <Button
+            color="neutral"
+            shadow="high"
+            size="large"
+            onClick={() => console.log("test")}
+          >
+            LARGE
+          </Button>
+        </div>
+        <div>
+          <Button
+            color="neutral"
+            shadow="medium"
+            size="medium"
+            onClick={() => console.log("test")}
+          >
+            MEDIUM
+          </Button>
+        </div>
+        <div>
+          <Button
+            color="neutral"
             shadow="small"
             size="small"
             onClick={() => console.log("test")}

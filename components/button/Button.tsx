@@ -59,19 +59,13 @@ export default function Button({
     }
   };
 
-  const finalShadow = () => {
-    if (shadow) {
-      return `shadow-${color}-${shadow}`;
-    }
-  };
-
   const rounded = "rounded-extra-small";
 
   return (
     <button
       onClick={onClick ? onClick : () => console.log()}
       type={type ? type : "button"}
-      className={`   ${rounded} ${finalcolor()} button--${size}  ${margin}  ${finalShadow()}`}
+      className={`   ${rounded} ${finalcolor()} button--${size}  ${margin}  ${`shadow-${color}-${shadow}`} `}
     >
       {children}
     </button>

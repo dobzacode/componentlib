@@ -9,7 +9,6 @@ import P from "@/components/text/P";
 export default function Home() {
   return (
     <main className="flex justify-between flex-col items-center flex-wrap gap-large mx-auto">
-      <AllButton></AllButton>
       <div className="flex flex-wrap justify-center gap-medium bg-white w-full items-center py-large tablet:px-40">
         <Form bgColor="bg-white " title="Formulaire de contact"></Form>
         <ImageDiv
