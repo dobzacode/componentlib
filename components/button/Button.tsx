@@ -7,17 +7,19 @@ interface ButtonProps {
   onClick?: React.MouseEventHandler<HTMLButtonElement>;
   children: string | JSX.Element;
   type?: "button" | "submit" | "reset";
-  color:
+  color?:
     | "primary"
     | "secondary"
     | "tertiary"
-    | "transparent-primary"
-    | "transparent-secondary"
-    | "transparent-tertiary"
-    | "transparent-black";
+    | "success"
+    | "error"
+    | "warning"
+    | "info"
+    | "neutral";
+  transparent?: boolean;
   size: "small" | "medium" | "large";
   margin?: string;
-  shadow?: string;
+  shadow?: "small" | "medium" | "high" | "";
 }
 
 export default function Button({
@@ -28,23 +30,38 @@ export default function Button({
   margin = "",
   shadow = "",
   size,
+  transparent,
 }: ButtonProps) {
   const finalcolor = () => {
-    switch (color) {
-      case "primary":
-        return "bg-primary40 text-white";
-      case "secondary":
-        return "bg-secondary40 text-white";
-      case "tertiary":
-        return "bg-tertiary40 text-white";
-      case "transparent-primary":
-        return "border border-primary40 text-primary40";
-      case "transparent-secondary":
-        return "border border-secondary40 text-secondary40";
-      case "transparent-tertiary":
-        return "border border-tertiary40 text-tertiary40";
-      case "transparent-black":
-        return "border border-black text-black";
+    if (transparent) {
+      return color
+        ? `border-2 border-${color}40 text-${color}40 `
+        : "border border-black text-black";
+    } else {
+      switch (color) {
+        case "primary":
+          return "bg-primary40 text-white";
+        case "secondary":
+          return "bg-secondary40 text-white";
+        case "tertiary":
+          return "bg-tertiary40 text-white";
+        case "success":
+          return "bg-success40 text-white";
+        case "error":
+          return "bg-error40 text-white";
+        case "warning":
+          return "bg-warning40 text-white";
+        case "info":
+          return "bg-info40 text-white";
+        case "neutral":
+          return "bg-neutral40 text-white";
+      }
+    }
+  };
+
+  const finalShadow = () => {
+    if (shadow) {
+      return `shadow-${color}-${shadow}`;
     }
   };
 
@@ -54,7 +71,7 @@ export default function Button({
     <button
       onClick={onClick ? onClick : () => console.log()}
       type={type ? type : "button"}
-      className={`   ${rounded} ${finalcolor()} button--${size}  ${margin}  ${shadow}`}
+      className={`   ${rounded} ${finalcolor()} button--${size}  ${margin}  ${finalShadow()}`}
     >
       {children}
     </button>

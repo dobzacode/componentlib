@@ -4,12 +4,12 @@ import Button from "./Button";
 
 export default function AllButton() {
   return (
-    <div className="flex gap-large">
-      <div className="flex flex-col gap-sub-large">
+    <div className="flex gap-sub-large justify-center">
+      <div className="flex flex-col gap-small">
         <div>
           <Button
             color="primary"
-            shadow="shadow-primary-high"
+            shadow="high"
             size="large"
             onClick={() => console.log("test")}
           >
@@ -19,7 +19,7 @@ export default function AllButton() {
         <div>
           <Button
             color="primary"
-            shadow="shadow-primary-medium"
+            shadow="medium"
             size="medium"
             onClick={() => console.log("test")}
           >
@@ -29,7 +29,7 @@ export default function AllButton() {
         <div>
           <Button
             color="primary"
-            shadow="shadow-primary-small"
+            shadow="small"
             size="small"
             onClick={() => console.log("test")}
           >
@@ -37,11 +37,11 @@ export default function AllButton() {
           </Button>
         </div>
       </div>
-      <div className="flex flex-col gap-sub-large">
+      <div className="flex flex-col gap-small">
         <div>
           <Button
             color="secondary"
-            shadow="shadow-secondary-high"
+            shadow="shhigh"
             size="large"
             onClick={() => console.log("test")}
           >
@@ -51,7 +51,7 @@ export default function AllButton() {
         <div>
           <Button
             color="secondary"
-            shadow="shadow-secondary-medium"
+            shadow="shmedium"
             size="medium"
             onClick={() => console.log("test")}
           >
@@ -61,7 +61,7 @@ export default function AllButton() {
         <div>
           <Button
             color="secondary"
-            shadow="shadow-secondary-small"
+            shadow="shsmall"
             size="small"
             onClick={() => console.log("test")}
           >
@@ -69,11 +69,11 @@ export default function AllButton() {
           </Button>
         </div>
       </div>
-      <div className="flex flex-col gap-sub-large">
+      <div className="flex flex-col gap-small">
         <div>
           <Button
             color="tertiary"
-            shadow="shadow-tertiary-high"
+            shadow="high"
             size="large"
             onClick={() => console.log("test")}
           >
@@ -83,7 +83,7 @@ export default function AllButton() {
         <div>
           <Button
             color="tertiary"
-            shadow="shadow-tertiary-medium"
+            shadow="medium"
             size="medium"
             onClick={() => console.log("test")}
           >
@@ -93,7 +93,7 @@ export default function AllButton() {
         <div>
           <Button
             color="tertiary"
-            shadow="shadow-tertiary-small"
+            shadow="small"
             size="small"
             onClick={() => console.log("test")}
           >
@@ -101,34 +101,19 @@ export default function AllButton() {
           </Button>
         </div>
       </div>
-      <div className="flex flex-col gap-sub-large">
+      <div className="flex flex-col gap-small">
         <div>
-          <Button
-            color="transparent-black"
-            shadow="shadow-high"
-            size="large"
-            onClick={() => console.log("test")}
-          >
+          <Button transparent size="large" onClick={() => console.log("test")}>
             LARGE
           </Button>
         </div>
         <div>
-          <Button
-            color="transparent-black"
-            shadow="shadow-medium"
-            size="medium"
-            onClick={() => console.log("test")}
-          >
+          <Button transparent size="medium" onClick={() => console.log("test")}>
             MEDIUM
           </Button>
         </div>
         <div>
-          <Button
-            color="transparent-black"
-            shadow="shadow-small"
-            size="small"
-            onClick={() => console.log("test")}
-          >
+          <Button transparent size="small" onClick={() => console.log("test")}>
             SMALL
           </Button>
         </div>

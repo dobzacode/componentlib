@@ -8,9 +8,14 @@ interface FooterProps {
   margin?: string;
 }
 
-export default function Footer({ height, bgColor, flex, margin }: FooterProps) {
+export default function Footer({
+  height,
+  bgColor,
+  flex = "",
+  margin = "",
+}: FooterProps) {
   return (
-    <footer className={`${height} ${bgColor} ${flex} ${margin} -mt-large`}>
+    <footer className={`${height} ${bgColor} ${flex} ${margin} `}>
       <address className="flex justify-center gap-medium ">
         <SocialIcon size={3} linkTo="/" mdiPath={mdiInstagram}></SocialIcon>
         <SocialIcon size={3} linkTo="/" mdiPath={mdiFacebook}></SocialIcon>

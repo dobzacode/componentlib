@@ -40,8 +40,8 @@ export default function Header({
     return (
       <>
         <NavLink href="/color">Color</NavLink>
-        <NavLink href="/">Lien</NavLink>
-        <NavLink href="/">Lien</NavLink>
+        <NavLink href="/typography">Typography</NavLink>
+        <NavLink href="/component">Component</NavLink>
         <NavLink href="/">Lien</NavLink>
         <NavLink href="/">Lien</NavLink>
       </>
