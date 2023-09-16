@@ -19,7 +19,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="flex flex-col justify-between  gap-sub-large relative min-h-screen">
+      <body className="flex flex-col justify-between  gap-sub-medium relative min-h-screen">
         <Header
           height="h-[150px]"
           //top-[150px]

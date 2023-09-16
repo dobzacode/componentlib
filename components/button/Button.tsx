@@ -23,7 +23,7 @@ interface ButtonProps {
 }
 
 export default function Button({
-  onClick,
+  onClick = () => console.log("empty"),
   children,
   color,
   type = "button",
