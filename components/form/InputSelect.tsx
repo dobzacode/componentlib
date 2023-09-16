@@ -2,7 +2,7 @@
 
 import { EventHandler } from "react";
 import Label from "./Label";
-
+import { v4 as uuidv4 } from "uuid";
 interface InputProps {
   required?: boolean;
   color?:
@@ -66,7 +66,11 @@ export default function InputSelect({
           </option>
         )}
         {choices.map((choice) => {
-          return <option value={choice}>{choice}</option>;
+          return (
+            <option key={uuidv4()} value={choice}>
+              {choice}
+            </option>
+          );
         })}
       </select>
     </>
