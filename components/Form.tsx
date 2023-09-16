@@ -5,7 +5,7 @@ import Input from "./form/InputText";
 import Label from "./form/Label";
 
 import H1 from "./text/H1";
-import Field from "./form/Field";
+import InputText from "./form/InputText";
 import Button from "./button/Button";
 
 interface FormData {
@@ -58,24 +58,27 @@ export default function Form({
         className={`body flex flex-col gap-sub-medium pb-sub-large `}
         onSubmit={handleSubmit}
       >
-        <Field
+        <InputText
           flex="flex flex-col gap-small"
-          nom="nom"
+          name="nom"
+          id="nom"
           value={formData.nom}
           onChange={handleChange}
-        ></Field>
-        <Field
+        ></InputText>
+        <InputText
           flex="flex flex-col gap-small"
-          nom="prenom"
+          name="prenom"
+          id="prenom"
           value={formData.prenom}
           onChange={handleChange}
-        ></Field>
-        <Field
+        ></InputText>
+        <InputText
           flex="flex flex-col gap-small"
-          nom="email"
+          name="email"
+          id="email"
           value={formData.email}
           onChange={handleChange}
-        ></Field>
+        ></InputText>
         <Button
           type="submit"
           size="small"

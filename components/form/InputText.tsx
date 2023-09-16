@@ -19,6 +19,7 @@ interface InputProps {
   value?: string;
   onChange?: React.ChangeEventHandler<HTMLInputElement>;
   placeholder?: string;
+  flex?: string;
   hiddenLabel?: boolean;
 }
 
