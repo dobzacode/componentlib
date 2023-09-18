@@ -45,7 +45,7 @@ function InputSelect({
 }: SelectProps) {
   return (
     <select
-      className={`${determineColor()} body placeholder:body px-extra-small py-[1.1rem] rounded-lg box-border border shadow-inner minimal`}
+      className={`${determineColor()} body placeholder:body px-extra-small py-[1.1rem] rounded-lg box-border border shadow-inner minimal cursor-pointer`}
       onChange={onChange}
       required={required}
       id={id}
@@ -93,7 +93,7 @@ function InputRadio({
   return (
     <div className="flex gap-extra-small">
       <input
-        className={`${determineColor()} body placeholder:body p-extra-small  rounded-lg box-border border shadow-inner`}
+        className={`cursor-pointer `}
         required={required}
         type="radio"
         id={choice}
@@ -167,7 +167,7 @@ export default function Input({
         ""
       )}
       {type === "radio" && (
-        <div className="flex gap-small">
+        <fieldset className="flex gap-small">
           {choices.map((choice) => {
             return (
               <InputRadio
@@ -182,7 +182,7 @@ export default function Input({
               />
             );
           })}
-        </div>
+        </fieldset>
       )}
     </>
   );

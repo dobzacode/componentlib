@@ -1,5 +1,5 @@
 interface LabelProps {
-  children: string;
+  children: string | JSX.Element;
   htmlFor: string;
   hidden: boolean;
   style?: string;
