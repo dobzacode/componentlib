@@ -9,10 +9,11 @@ import H1 from "./text/H1";
 import Button from "./button/Button";
 
 interface FormData {
-  nom: string;
-  prenom: string;
+  name: string;
+  password: string;
   email: string;
   selectValue: string;
+  radioValue: string;
 }
 
 export default function Form({
@@ -23,23 +24,23 @@ export default function Form({
   bgColor?: string;
 }) {
   const [formData, setFormData] = useState<FormData>({
-    nom: "",
-    prenom: "",
+    name: "",
+    password: "",
     email: "",
     selectValue: "",
+    radioValue: "",
   });
 
   const handleChange = (
     e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
   ) => {
     const { name, value } = e.target;
+    console.log(formData);
     setFormData((prevFormData) => ({ ...prevFormData, [name]: value }));
   };
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
-    console.log("submit");
-    console.log(formData);
   };
 
   return (
@@ -67,28 +68,29 @@ export default function Form({
           color="primary"
           type="text"
           flex="flex flex-col gap-small"
-          id="nom"
-          value={formData.nom}
+          id="name"
+          value={formData.name}
           onChange={handleChange}
         ></Input>
-        <Input
-          hiddenLabel={true}
-          placeholder="Prénom"
-          color="primary"
-          type="text"
-          flex="flex flex-col gap-small"
-          id="prenom"
-          value={formData.prenom}
-          onChange={handleChange}
-        ></Input>
+
         <Input
           hiddenLabel={true}
           placeholder="Email"
           color="primary"
-          type="text"
+          type="email"
           flex="flex flex-col gap-small"
           id="email"
           value={formData.email}
+          onChange={handleChange}
+        ></Input>
+        <Input
+          hiddenLabel={true}
+          placeholder="Password"
+          color="primary"
+          type="password"
+          flex="flex flex-col gap-small"
+          id="password"
+          value={formData.password}
           onChange={handleChange}
         ></Input>
         <Input
@@ -101,6 +103,17 @@ export default function Form({
           value={formData.selectValue}
           onChange={handleChange}
         ></Input>
+
+        <Input
+          type="radio"
+          hiddenLabel={true}
+          color="primary"
+          id="radioValue"
+          choices={["First choice", "Second choice"]}
+          value={formData.radioValue}
+          onChange={handleChange}
+        ></Input>
+
         <Button
           type="submit"
           size="small"

@@ -5,7 +5,7 @@ import Label from "./Label";
 import { v4 as uuidv4 } from "uuid";
 interface InputProps {
   required?: boolean;
-  type: "text" | "select";
+  type: "text" | "email" | "password" | "select" | "radio";
   color?:
     | "primary"
     | "secondary"
@@ -16,21 +16,103 @@ interface InputProps {
     | "success"
     | "info";
   id: string;
-
   value?: string;
   flex?: string;
   onChange?: React.ChangeEventHandler<HTMLInputElement | HTMLSelectElement>;
-
   placeholder?: string;
   hiddenLabel?: boolean;
   choices?: string[];
+}
+
+interface SelectProps {
+  determineColor: Function;
+  onChange?: React.ChangeEventHandler<HTMLSelectElement>;
+  required?: boolean;
+  id: string;
+  value?: string;
+  placeholder?: string;
+  choices: string[];
+}
+
+function InputSelect({
+  determineColor = () => {},
+  onChange,
+  required,
+  id,
+  value,
+  placeholder,
+  choices,
+}: SelectProps) {
+  return (
+    <select
+      className={`${determineColor()} body placeholder:body px-extra-small py-[1.1rem] rounded-lg box-border border shadow-inner minimal`}
+      onChange={onChange}
+      required={required}
+      id={id}
+      name={id}
+      value={value}
+      placeholder={placeholder ? placeholder : ""}
+      aria-label={id}
+    >
+      {placeholder && (
+        <option value="" className="" disabled hidden>
+          {placeholder}
+        </option>
+      )}
+      {choices.map((choice) => {
+        return (
+          <option key={uuidv4()} value={choice}>
+            {choice}
+          </option>
+        );
+      })}
+    </select>
+  );
+}
+
+interface RadioProps {
+  determineColor: Function;
+  onChange?: React.ChangeEventHandler<HTMLInputElement>;
+  required?: boolean;
+  id: string;
+  value?: string;
+  placeholder?: string;
+  choice: string;
+  color: string;
+}
+
+function InputRadio({
+  determineColor,
+  required,
+  choice,
+  id,
+  value,
+  onChange,
+  color,
+}: RadioProps) {
+  return (
+    <div className="flex gap-extra-small">
+      <input
+        className={`${determineColor()} body placeholder:body p-extra-small  rounded-lg box-border border shadow-inner`}
+        required={required}
+        type="radio"
+        id={choice}
+        name={id}
+        value={choice}
+        checked={value === choice}
+        onChange={onChange}
+      ></input>
+      <Label style={`text-${color}90 body`} hidden={false} htmlFor={choice}>
+        {choice}
+      </Label>
+    </div>
+  );
 }
 
 export default function Input({
   required,
   type,
   id,
-
   value,
   color = "neutral",
   onChange = () => console.log("empty"),
@@ -38,7 +120,7 @@ export default function Input({
   hiddenLabel = false,
   choices = [""],
 }: InputProps) {
-  const determineColor = () => {
+  const determineColor = (color: string) => {
     //bg-primary5 placeholder:text-primary90/[.4] text-primary90 border-primary90/[.2] outline-primary90/[.2]
     //bg-secondary5 placeholder:text-secondary90/[.4] text-secondary90 border-secondary90/[.2] outline-secondary90/[.2]
     //bg-tertiary5 placeholder:text-tertiary90/[.4] text-tertiary90 border-tertiary90/[.2] outline-tertiary90/[.2]
@@ -52,45 +134,55 @@ export default function Input({
 
   return (
     <>
-      <Label style={`text-${color}90 body`} hidden={hiddenLabel} htmlFor={name}>
-        {name}
-      </Label>
+      {type !== "radio" && (
+        <Label style={`text-${color}90 body`} hidden={hiddenLabel} htmlFor={id}>
+          {id}
+        </Label>
+      )}
       {type === "select" && (
-        <select
-          className={`${determineColor()} body placeholder:body px-extra-small py-[1.1rem] rounded-lg box-border border shadow-inner minimal`}
+        <InputSelect
+          determineColor={() => determineColor(color)}
           onChange={onChange}
           required={required}
           id={id}
-          name={id}
           value={value}
-          placeholder={placeholder ? placeholder : ""}
-          aria-label={id}
-        >
-          {placeholder && (
-            <option value="" className="" disabled hidden>
-              {placeholder}
-            </option>
-          )}
-          {choices.map((choice) => {
-            return (
-              <option key={uuidv4()} value={choice}>
-                {choice}
-              </option>
-            );
-          })}
-        </select>
+          placeholder={placeholder}
+          choices={choices}
+        />
       )}
-      {type === "text" && (
+      {type === "text" || type === "email" || type === "password" ? (
         <input
-          className={`${determineColor()} body placeholder:body p-extra-small  rounded-lg box-border border shadow-inner`}
+          className={`${determineColor(
+            color
+          )} body placeholder:body p-extra-small  rounded-lg box-border border shadow-inner`}
           required={required}
-          type="text"
+          type={type}
           id={id}
           name={id}
           value={value}
           onChange={onChange}
           placeholder={placeholder ? placeholder : ""}
         ></input>
+      ) : (
+        ""
+      )}
+      {type === "radio" && (
+        <div className="flex gap-small">
+          {choices.map((choice) => {
+            return (
+              <InputRadio
+                key={uuidv4()}
+                determineColor={() => determineColor(color)}
+                required={required}
+                choice={choice}
+                id={id}
+                value={value}
+                onChange={onChange}
+                color={color}
+              />
+            );
+          })}
+        </div>
       )}
     </>
   );
