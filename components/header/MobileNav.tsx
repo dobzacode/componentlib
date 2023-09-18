@@ -26,7 +26,7 @@ export default function MobileNav({
     <nav className={navStyle}>
       {logo ? logo : ""}
       <button onClick={() => setShowMenu(!showMenu)}>
-        <Icon path={mdiMenu} size={3.5} className="text-primary40"></Icon>
+        <Icon path={mdiMenu} size={3.5}></Icon>
       </button>
       <div
         className={`${modalStyle} absolute z-10 ${

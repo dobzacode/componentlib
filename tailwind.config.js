@@ -5,10 +5,10 @@ const HEADING_SIZE = "3.2rem";
 const SUBHEADING_SIZE = "2.4rem";
 const BODY_SIZE = "1.8rem";
 
-const LIGHTNESS_FACTOR = "50%";
-const SATURATION_FACTOR = 10;
+const LIGHTNESS_FACTOR = "40%";
+const SATURATION_FACTOR = 30;
 
-const PRIMARY_COLOR_HSL = "170.54, 69%";
+const PRIMARY_COLOR_HSL = "210.54, 69%";
 const PRIMARY_COLOR_SHADOW = `${PRIMARY_COLOR_HSL.split(",")[0]}deg ${
   69 - SATURATION_FACTOR
 }% ${LIGHTNESS_FACTOR}`;

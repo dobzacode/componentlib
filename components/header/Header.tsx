@@ -37,13 +37,29 @@ export default function Header({
   };
 
   const navlink = () => {
+    const hover =
+      "hover:bg-neutral80 hover:text-primary1 duration-fast ease-in";
+    const currentNavStyle = "bg-neutral80 text-primary1";
+
     return (
       <>
-        <NavLink href="/color">Color</NavLink>
-        <NavLink href="/typography">Typography</NavLink>
-        <NavLink href="/component">Component</NavLink>
-        <NavLink href="/">Lien</NavLink>
-        <NavLink href="/">Lien</NavLink>
+        <NavLink hover={hover} currentNavStyle={currentNavStyle} href="/color">
+          Color
+        </NavLink>
+        <NavLink
+          hover={hover}
+          currentNavStyle={currentNavStyle}
+          href="/typography"
+        >
+          Typography
+        </NavLink>
+        <NavLink
+          hover={hover}
+          currentNavStyle={currentNavStyle}
+          href="/component"
+        >
+          Component
+        </NavLink>
       </>
     );
   };

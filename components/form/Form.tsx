@@ -58,7 +58,7 @@ export default function Form({
 
   return (
     <div
-      className={`flex flex-col gap-medium items-center bg-${theme}1 rounded-extra-small shadow-${theme}-medium border border-${theme}10 p-sub-large`}
+      className={`flex flex-col gap-medium items-center bg-${theme}1 rounded-extra-small shadow-${theme}-high border border-${theme}10 p-sub-large`}
     >
       {title && (
         <H1

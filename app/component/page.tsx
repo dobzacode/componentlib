@@ -5,7 +5,7 @@ import AllInput from "@/components/form/InputShowcase";
 export default function Component({}) {
   return (
     <>
-      <div className="flex gap-small mb-sub-large">
+      <div className="flex gap-small mb-sub-large justify-center">
         <AllButton></AllButton>
         <AllInput></AllInput>
         <FormShowcase></FormShowcase>
