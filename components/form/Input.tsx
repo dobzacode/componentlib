@@ -2,9 +2,10 @@
 
 import { EventHandler } from "react";
 import Label from "./Label";
-
+import { v4 as uuidv4 } from "uuid";
 interface InputProps {
   required?: boolean;
+  type: "text" | "select";
   color?:
     | "primary"
     | "secondary"
@@ -15,23 +16,27 @@ interface InputProps {
     | "success"
     | "info";
   id: string;
-  name: string;
+
   value?: string;
-  onChange?: React.ChangeEventHandler<HTMLInputElement>;
-  placeholder?: string;
   flex?: string;
+  onChange?: React.ChangeEventHandler<HTMLInputElement | HTMLSelectElement>;
+
+  placeholder?: string;
   hiddenLabel?: boolean;
+  choices?: string[];
 }
 
-export default function InputText({
+export default function Input({
   required,
+  type,
   id,
-  name,
+
   value,
   color = "neutral",
   onChange = () => console.log("empty"),
   placeholder,
   hiddenLabel = false,
+  choices = [""],
 }: InputProps) {
   const determineColor = () => {
     //bg-primary5 placeholder:text-primary90/[.4] text-primary90 border-primary90/[.2] outline-primary90/[.2]
@@ -47,24 +52,46 @@ export default function InputText({
 
   return (
     <>
-      <Label
-        style={`text-${color}90 body}`}
-        hidden={hiddenLabel}
-        htmlFor={name}
-        aria-label={name}
-      >
+      <Label style={`text-${color}90 body`} hidden={hiddenLabel} htmlFor={name}>
         {name}
       </Label>
-      <input
-        className={`${determineColor()} body placeholder:body p-extra-small  rounded-lg box-border border shadow-inner`}
-        required={required}
-        type="text"
-        id={id}
-        name={name}
-        value={value}
-        onChange={onChange}
-        placeholder={placeholder ? placeholder : ""}
-      ></input>
+      {type === "select" && (
+        <select
+          className={`${determineColor()} body placeholder:body px-extra-small py-[1.1rem] rounded-lg box-border border shadow-inner minimal`}
+          onChange={onChange}
+          required={required}
+          id={id}
+          name={id}
+          value={value}
+          placeholder={placeholder ? placeholder : ""}
+          aria-label={id}
+        >
+          {placeholder && (
+            <option value="" className="" disabled hidden>
+              {placeholder}
+            </option>
+          )}
+          {choices.map((choice) => {
+            return (
+              <option key={uuidv4()} value={choice}>
+                {choice}
+              </option>
+            );
+          })}
+        </select>
+      )}
+      {type === "text" && (
+        <input
+          className={`${determineColor()} body placeholder:body p-extra-small  rounded-lg box-border border shadow-inner`}
+          required={required}
+          type="text"
+          id={id}
+          name={id}
+          value={value}
+          onChange={onChange}
+          placeholder={placeholder ? placeholder : ""}
+        ></input>
+      )}
     </>
   );
 }

@@ -1,17 +1,18 @@
 "use client";
 
 import { ChangeEvent, FormEvent, useState } from "react";
-import Input from "./form/InputText";
+import Input from "./form/Input";
 import Label from "./form/Label";
 
 import H1 from "./text/H1";
-import InputText from "./form/InputText";
+
 import Button from "./button/Button";
 
 interface FormData {
   nom: string;
   prenom: string;
   email: string;
+  selectValue: string;
 }
 
 export default function Form({
@@ -25,10 +26,11 @@ export default function Form({
     nom: "",
     prenom: "",
     email: "",
+    selectValue: "",
   });
 
   const handleChange = (
-    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
   ) => {
     const { name, value } = e.target;
     setFormData((prevFormData) => ({ ...prevFormData, [name]: value }));
@@ -37,6 +39,7 @@ export default function Form({
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     console.log("submit");
+    console.log(formData);
   };
 
   return (
@@ -58,27 +61,46 @@ export default function Form({
         className={`body flex flex-col gap-sub-medium pb-sub-large `}
         onSubmit={handleSubmit}
       >
-        <InputText
+        <Input
+          hiddenLabel={true}
+          placeholder="Nom"
+          color="primary"
+          type="text"
           flex="flex flex-col gap-small"
-          name="nom"
           id="nom"
           value={formData.nom}
           onChange={handleChange}
-        ></InputText>
-        <InputText
+        ></Input>
+        <Input
+          hiddenLabel={true}
+          placeholder="Prénom"
+          color="primary"
+          type="text"
           flex="flex flex-col gap-small"
-          name="prenom"
           id="prenom"
           value={formData.prenom}
           onChange={handleChange}
-        ></InputText>
-        <InputText
+        ></Input>
+        <Input
+          hiddenLabel={true}
+          placeholder="Email"
+          color="primary"
+          type="text"
           flex="flex flex-col gap-small"
-          name="email"
           id="email"
           value={formData.email}
           onChange={handleChange}
-        ></InputText>
+        ></Input>
+        <Input
+          type="select"
+          hiddenLabel={true}
+          placeholder="Your choice"
+          color="primary"
+          id="selectValue"
+          choices={["First choice", "Second choice", "Third choice"]}
+          value={formData.selectValue}
+          onChange={handleChange}
+        ></Input>
         <Button
           type="submit"
           size="small"
