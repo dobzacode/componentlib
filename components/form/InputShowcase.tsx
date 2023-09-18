@@ -19,9 +19,9 @@ export default function InputShowcase({}) {
   };
 
   return (
-    <div className="ml-extra-large">
+    <div>
       <div className="flex flex-col justify-center items-start w-fit gap-sub-large">
-        <H2 type="heading--extra-large">Input</H2>
+        <H2 type="laptop-large:heading--extra-large heading--large">Input</H2>
         <div className="flex flex-col gap-small w-full">
           <H3 type="heading">Text</H3>
           <Input

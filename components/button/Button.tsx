@@ -89,11 +89,15 @@ export default function Button({
 
   const rounded = "rounded-extra-small";
 
+  //button--small
+  //button--medium
+  //button--large
+
   return (
     <button
       onClick={onClick}
       type={type ? type : "button"}
-      className={`   ${rounded} ${finalcolor()} button--${size}  ${margin}  ${finalShadow()} `}
+      className={`${rounded} ${finalcolor()} button--${size} ${margin} ${finalShadow()} `}
     >
       {children}
     </button>

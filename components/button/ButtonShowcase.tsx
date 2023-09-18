@@ -7,7 +7,7 @@ import Button from "./Button";
 export default function ButtonShowcase() {
   return (
     <div className="flex flex-col justify-center items-start w-fit gap-sub-large">
-      <H2 type="heading--extra-large">Button</H2>
+      <H2 type="laptop-large:heading--extra-large heading--large">Button</H2>
       <div className="flex items-start">
         <div className="flex flex-col gap-small ">
           <H3 type="heading">Types</H3>
