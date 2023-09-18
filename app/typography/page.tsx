@@ -5,7 +5,7 @@ import P from "@/components/text/P";
 
 export default function Typography({}) {
   return (
-    <div className="flex justify-center">
+    <div className="flex justify-center mx-small">
       <div className="mb-extra-large flex flex-col gap-sub-large items-start">
         <H1 type="heading--extra-large" textColor="text-neutral80">
           Extra large heading

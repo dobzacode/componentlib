@@ -4,7 +4,7 @@ import P from "@/components/text/P";
 
 export default function Color() {
   return (
-    <div className="flex  justify-center gap-extra-large mb-large items-center flex-wrap">
+    <div className="flex  justify-center gap-extra-large mb-large items-center flex-wrap mx-small">
       <div className="flex flex-col gap-medium">
         <H2 type="heading--sub-large">Brand</H2>
         <div className="flex gap-small">
