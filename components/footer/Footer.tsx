@@ -1,4 +1,4 @@
-import SocialIcon from "./footer/SocialIcon";
+import SocialIcon from "./SocialIcon";
 import { mdiInstagram, mdiFacebook, mdiTwitter, mdiLinkedin } from "@mdi/js";
 
 interface FooterProps {

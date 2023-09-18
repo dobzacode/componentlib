@@ -1,8 +1,8 @@
 import { ReactNode } from "react";
-import Nav from "./header/Nav";
-import NavLink from "./header/NavLink";
-import H2 from "./text/H2";
-import MobileNav from "./header/MobileNav";
+import Nav from "./Nav";
+import NavLink from "./NavLink";
+import H2 from "../text/H2";
+import MobileNav from "./MobileNav";
 import Link from "next/link";
 
 interface HeaderProps {

@@ -1,16 +1,17 @@
 "use client";
 
 import H2 from "../text/H2";
+import H3 from "../text/H3";
 import Button from "./Button";
 
-export default function AllButton() {
+export default function ButtonShowcase() {
   return (
     <div className="ml-extra-large">
       <div className="flex flex-col justify-center items-start w-fit gap-sub-large">
         <H2 type="heading--extra-large">Button</H2>
         <div className="flex items-start">
           <div className="flex flex-col gap-small ">
-            <H2 type="heading">Types</H2>
+            <H3 type="heading">Types</H3>
             <div className="flex flex-col gap-small">
               <div className="flex items-center justify-between gap-large">
                 <Button color="primary" shadow="medium" size="small">
@@ -76,7 +77,7 @@ export default function AllButton() {
             </div>
           </div>
           <div className="flex flex-col gap-small ">
-            <H2 type="heading">Sizes</H2>
+            <H3 type="heading">Sizes</H3>
             <div className="flex flex-col gap-small">
               <div className="flex items-center justify-between gap-large">
                 <Button color="primary" shadow="medium" size="large">

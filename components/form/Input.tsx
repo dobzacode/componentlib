@@ -5,7 +5,7 @@ import Label from "./Label";
 import { v4 as uuidv4 } from "uuid";
 interface InputProps {
   required?: boolean;
-  type: "text" | "email" | "password" | "select" | "radio";
+  type: "text" | "email" | "password" | "select" | "radio" | "textarea";
   color?:
     | "primary"
     | "secondary"
@@ -82,7 +82,6 @@ interface RadioProps {
 }
 
 function InputRadio({
-  determineColor,
   required,
   choice,
   id,
@@ -91,9 +90,9 @@ function InputRadio({
   color,
 }: RadioProps) {
   return (
-    <div className="flex gap-extra-small">
+    <div className="flex gap-extra-small items-center">
       <input
-        className={`cursor-pointer `}
+        className={`cursor-pointer`}
         required={required}
         type="radio"
         id={choice}
@@ -183,6 +182,17 @@ export default function Input({
             );
           })}
         </fieldset>
+      )}
+      {type === "textarea" && (
+        <textarea
+          className={`${determineColor(
+            color
+          )} body placeholder:body p-extra-small  rounded-lg box-border border shadow-inner w-full leading-9`}
+          id={id}
+          name={id}
+        >
+          {placeholder}
+        </textarea>
       )}
     </>
   );
