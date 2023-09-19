@@ -78,10 +78,10 @@ function highShadow(color) {
 }
 
 function clayShadow(color) {
-  return `35px 35px 68px 0px hsl(${color.split(",")[0]}deg ${
+  return `16px 16px 30px 0px hsl(${color.split(",")[0]}deg ${
     PRIMARY_COLOR_HSL.split(",")[1]
   } ${LIGHTNESS_FACTOR} / 0.5),
-  inset -5px -5px 16px 0px hsl(${color.split(",")[0]}deg ${
+  inset -2px -2px 16px 0px hsl(${color.split(",")[0]}deg ${
     PRIMARY_COLOR_HSL.split(",")[1]
   } ${LIGHTNESS_FACTOR} / 0.6),
   inset 0px 11px 28px 0px rgba(255, 255, 255, 1)`;
@@ -119,7 +119,7 @@ module.exports = {
         primary90: `hsl(${PRIMARY_COLOR_HSL}, 10%)`,
         primary100: `hsl(${PRIMARY_COLOR_HSL}, 0%)`,
 
-        secondary0: `hsl(${SECONDARY_COLOR_HSL}, 99%)`,
+        secondary1: `hsl(${SECONDARY_COLOR_HSL}, 99%)`,
         secondary5: `hsl(${SECONDARY_COLOR_HSL}, 95%)`,
         secondary10: `hsl(${SECONDARY_COLOR_HSL}, 90%)`,
         secondary20: `hsl(${SECONDARY_COLOR_HSL}, 80%)`,

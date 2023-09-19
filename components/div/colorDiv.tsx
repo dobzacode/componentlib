@@ -1,6 +1,6 @@
 interface ColorDivProps {
   children?: JSX.Element;
-  color: string;
+  color?: string;
   padding?: string;
   margin?: string;
   rounded?: string;
@@ -10,7 +10,7 @@ interface ColorDivProps {
 
 export default function ColorDiv({
   children,
-  color,
+  color = "",
   padding = "",
   margin = "",
   rounded = "",

@@ -74,6 +74,16 @@ export default function ButtonShowcase() {
               </Button>
             </div>
           </div>
+          <div className="flex items-center justify-between gap-large">
+            <Button
+              color="primary"
+              shadow="clay"
+              size="medium"
+              rounded="rounded-sub-large"
+            >
+              CLAY
+            </Button>
+          </div>
         </div>
         <div className="flex flex-col gap-small ">
           <H3 type="heading">Sizes</H3>
@@ -95,13 +105,6 @@ export default function ButtonShowcase() {
             <div className="flex items-center justify-between gap-large">
               <Button color="primary" shadow="medium" size="small">
                 SMALL
-              </Button>
-            </div>
-          </div>
-          <div className="flex flex-col gap-small">
-            <div className="flex items-center justify-between gap-large">
-              <Button color="primary" shadow="medium" size="small">
-                CLAY
               </Button>
             </div>
           </div>

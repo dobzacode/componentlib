@@ -43,13 +43,16 @@
   .button--small {
     @apply py-small px-sub-large text-body leading-body font-medium;
   }
+
+  .button--clay {
+    @apply py-sub-medium px-[4.8rem] heading font-semibold;
+  }
 }
 
 @tailwind utilities;
 
 :root {
   --primary-color: theme("colors.primary40");
-
   color: theme("colors.neutral80");
 }
 
