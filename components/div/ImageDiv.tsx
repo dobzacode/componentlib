@@ -4,22 +4,30 @@ interface DivImageProps {
   src: string;
   sizes: string;
   alt: string;
-  dimension: string;
+  divDimension: string;
+  imageWidth: number;
+  imageHeight: number;
   rounded?: string;
+  fill?: boolean;
 }
 
 export default function ImageDiv({
   sizes,
   src,
   alt,
-  dimension,
+  divDimension,
+  imageWidth,
+  imageHeight,
+  fill,
   rounded,
 }: DivImageProps) {
   return (
-    <div className={`relative ${dimension} ${rounded}`}>
+    <div className={`${fill ? "relative" : ""} ${divDimension} ${rounded}`}>
       <Image
-        fill
+        fill={fill}
         sizes={sizes}
+        width={imageWidth}
+        height={imageHeight}
         src={src}
         alt={alt}
         className={`${rounded}`}

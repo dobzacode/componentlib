@@ -4,7 +4,7 @@ const nextConfig = {
     appDir: true,
   },
   images: {
-    domains: ["placehold.co"],
+    domains: ["placehold.co", "flowbite.s3.amazonaws.com"],
     loader: "default",
     dangerouslyAllowSVG: true,
   },
