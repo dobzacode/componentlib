@@ -98,6 +98,13 @@ export default function ButtonShowcase() {
               </Button>
             </div>
           </div>
+          <div className="flex flex-col gap-small">
+            <div className="flex items-center justify-between gap-large">
+              <Button color="primary" shadow="medium" size="small">
+                CLAY
+              </Button>
+            </div>
+          </div>
         </div>
       </div>
     </div>

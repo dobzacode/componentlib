@@ -77,6 +77,16 @@ function highShadow(color) {
   75.7px 56.4px 91.3px -3.5px hsl(${color} / 0.16)`;
 }
 
+function clayShadow(color) {
+  return `35px 35px 68px 0px hsl(${color.split(",")[0]}deg ${
+    PRIMARY_COLOR_HSL.split(",")[1]
+  } ${LIGHTNESS_FACTOR} / 0.5),
+  inset -5px -5px 16px 0px hsl(${color.split(",")[0]}deg ${
+    PRIMARY_COLOR_HSL.split(",")[1]
+  } ${LIGHTNESS_FACTOR} / 0.6),
+  inset 0px 11px 28px 0px rgba(255, 255, 255, 1)`;
+}
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   mode: "jit",
@@ -238,12 +248,15 @@ module.exports = {
         "primary-low": lowShadow(PRIMARY_COLOR_SHADOW),
         "primary-medium": mediumShadow(PRIMARY_COLOR_SHADOW),
         "primary-high": highShadow(PRIMARY_COLOR_SHADOW),
+        "primary-clay": clayShadow(PRIMARY_COLOR_HSL),
         "secondary-low": lowShadow(SECONDARY_COLOR_SHADOW),
         "secondary-medium": mediumShadow(SECONDARY_COLOR_SHADOW),
         "secondary-high": highShadow(SECONDARY_COLOR_SHADOW),
+        "secondary-clay": clayShadow(SECONDARY_COLOR_HSL),
         "tertiary-low": lowShadow(TERTIARY_COLOR_SHADOW),
         "tertiary-medium": mediumShadow(TERTIARY_COLOR_SHADOW),
         "tertiary-high": highShadow(TERTIARY_COLOR_SHADOW),
+        "tertiary-clay": clayShadow(TERTIARY_COLOR_HSL),
         "success-low": lowShadow(SUCCESS_COLOR_SHADOW),
         "success-medium": mediumShadow(SUCCESS_COLOR_SHADOW),
         "success-high": highShadow(SUCCESS_COLOR_SHADOW),
@@ -259,6 +272,7 @@ module.exports = {
         "neutral-low": lowShadow(NEUTRAL_COLOR_SHADOW),
         "neutral-medium": mediumShadow(NEUTRAL_COLOR_SHADOW),
         "neutral-high": highShadow(NEUTRAL_COLOR_SHADOW),
+        "neutral-clay": clayShadow(NEUTRAL_COLOR_HSL),
         low: lowShadow(BLACK_COLOR_SHADOW),
         medium: mediumShadow(BLACK_COLOR_SHADOW),
         high: highShadow(BLACK_COLOR_SHADOW),

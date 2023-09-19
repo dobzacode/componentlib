@@ -5,6 +5,7 @@ interface ColorDivProps {
   margin?: string;
   rounded?: string;
   flex?: string;
+  shadow?: string;
 }
 
 export default function ColorDiv({
@@ -14,9 +15,12 @@ export default function ColorDiv({
   margin = "",
   rounded = "",
   flex = "",
+  shadow = "",
 }: ColorDivProps) {
   return (
-    <div className={`${color} ${padding} ${margin} ${rounded} ${flex} `}>
+    <div
+      className={`${color} ${padding} ${margin} ${rounded} ${flex} ${shadow}`}
+    >
       {children}
     </div>
   );

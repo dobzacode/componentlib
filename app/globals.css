@@ -49,6 +49,7 @@
 
 :root {
   --primary-color: theme("colors.primary40");
+
   color: theme("colors.neutral80");
 }
 
