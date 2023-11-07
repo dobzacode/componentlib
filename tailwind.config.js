@@ -4,21 +4,25 @@ const HEADING_SUBLARGE_SIZE = "4.8rem";
 const HEADING_SIZE = "3.2rem";
 const SUBHEADING_SIZE = "2.4rem";
 const BODY_SIZE = "1.8rem";
+const CAPTION_SIZE = "1.2rem";
 
-const LIGHTNESS_FACTOR = "40%";
+const LIGHTNESS_FACTOR = "20%";
 const SATURATION_FACTOR = 30;
 
-const PRIMARY_COLOR_HSL = "210.54, 69%";
+const PRIMARY_COLOR_HSL = "259, 55%";
 const PRIMARY_COLOR_SHADOW = `${PRIMARY_COLOR_HSL.split(",")[0]}deg ${
   69 - SATURATION_FACTOR
 }% ${LIGHTNESS_FACTOR}`;
+const PRIMARY_COLOR_LIGHT = `${PRIMARY_COLOR_HSL.split(",")[0]}deg ${
+  69 - SATURATION_FACTOR
+}% 80%`;
 
-const SECONDARY_COLOR_HSL = "44, 100%";
+const SECONDARY_COLOR_HSL = "200, 56%";
 const SECONDARY_COLOR_SHADOW = `${SECONDARY_COLOR_HSL.split(",")[0]}deg ${
   100 - SATURATION_FACTOR
 }% ${LIGHTNESS_FACTOR} `;
 
-const TERTIARY_COLOR_HSL = "159, 93.2%";
+const TERTIARY_COLOR_HSL = "17, 44%";
 const TERTIARY_COLOR_SHADOW = `${TERTIARY_COLOR_HSL.split(",")[0]}deg ${
   93.2 - SATURATION_FACTOR
 }% ${LIGHTNESS_FACTOR} `;
@@ -32,6 +36,9 @@ const ERROR_COLOR_HSL = "0, 80%";
 const ERROR_COLOR_SHADOW = `0deg ${
   80 - SATURATION_FACTOR
 }% ${LIGHTNESS_FACTOR} `;
+const ERROR_COLOR_LIGHT = `${ERROR_COLOR_HSL.split(",")[0]}deg ${
+  69 - SATURATION_FACTOR
+}% 80%`;
 
 const INFO_COLOR_HSL = "210.54, 69%";
 const INFO_COLOR_SHADOW = `218.54deg ${
@@ -64,6 +71,10 @@ function mediumShadow(color) {
   15.9px 11.8px 19.2px -3.5px hsl(${color} / 0.2)`;
 }
 
+function mediumLight(color) {
+  return `0px 0px 33px 7px hsl(${color} / 0.87)`;
+}
+
 function highShadow(color) {
   return `0.8px 0.6px 1px hsl(${color} / 0.35),
   2.5px 1.9px 3px -0.4px hsl(${color} / 0.32),
@@ -90,7 +101,8 @@ function clayShadow(color) {
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   mode: "jit",
-  darkMode: "class",
+  darkMode: ["class"],
+
   content: [
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
@@ -101,8 +113,8 @@ module.exports = {
       "mobile-small": "320px",
       "mobile-large": "425px",
       tablet: "768px",
-      "laptop-large": "1440px",
       laptop: "1024px",
+      "laptop-large": "1440px",
     },
     extend: {
       colors: {
@@ -117,6 +129,7 @@ module.exports = {
         primary70: `hsl(${PRIMARY_COLOR_HSL}, 30%)`,
         primary80: `hsl(${PRIMARY_COLOR_HSL}, 20%)`,
         primary90: `hsl(${PRIMARY_COLOR_HSL}, 10%)`,
+        primary99: `hsl(${PRIMARY_COLOR_HSL}, 1%)`,
         primary100: `hsl(${PRIMARY_COLOR_HSL}, 0%)`,
 
         secondary1: `hsl(${SECONDARY_COLOR_HSL}, 99%)`,
@@ -217,6 +230,7 @@ module.exports = {
         heading: HEADING_SIZE,
         "sub-heading": SUBHEADING_SIZE,
         body: BODY_SIZE,
+        caption: CAPTION_SIZE,
       },
       lineHeight: {
         "heading-extra-large": HEADING_EXTRA_LARGE_SIZE,
@@ -225,6 +239,7 @@ module.exports = {
         heading: HEADING_SIZE,
         "sub-heading": SUBHEADING_SIZE,
         body: BODY_SIZE,
+        caption: CAPTION_SIZE,
       },
       spacing: {
         "extra-large": HEADING_EXTRA_LARGE_SIZE,
@@ -247,6 +262,7 @@ module.exports = {
       boxShadow: {
         "primary-low": lowShadow(PRIMARY_COLOR_SHADOW),
         "primary-medium": mediumShadow(PRIMARY_COLOR_SHADOW),
+        "primary-medium-light": mediumShadow(PRIMARY_COLOR_LIGHT),
         "primary-high": highShadow(PRIMARY_COLOR_SHADOW),
         "primary-clay": clayShadow(PRIMARY_COLOR_HSL),
         "secondary-low": lowShadow(SECONDARY_COLOR_SHADOW),
@@ -262,6 +278,7 @@ module.exports = {
         "success-high": highShadow(SUCCESS_COLOR_SHADOW),
         "error-low": lowShadow(ERROR_COLOR_SHADOW),
         "error-medium": mediumShadow(ERROR_COLOR_SHADOW),
+        "error-medium-light": mediumShadow(ERROR_COLOR_LIGHT),
         "error-high": highShadow(ERROR_COLOR_SHADOW),
         "warning-low": lowShadow(WARNING_COLOR_SHADOW),
         "warning-medium": mediumShadow(WARNING_COLOR_SHADOW),
