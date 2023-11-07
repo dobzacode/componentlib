@@ -1,5 +1,6 @@
-import H2 from "../text/H2";
-import Form from "./Form";
+import Form from "../ui/form/GenericForm";
+import H2 from "../ui/text/H2";
+
 
 export default function FormShowcase() {
   return (

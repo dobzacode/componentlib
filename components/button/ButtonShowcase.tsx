@@ -1,8 +1,10 @@
 "use client";
 
-import H2 from "../text/H2";
-import H3 from "../text/H3";
-import Button from "./Button";
+import Button from "../ui/button/Button";
+import H2 from "../ui/text/H2";
+import H3 from "../ui/text/H3";
+
+
 
 export default function ButtonShowcase() {
   return (
@@ -77,9 +79,9 @@ export default function ButtonShowcase() {
           <div className="flex items-center justify-between gap-large">
             <Button
               color="primary"
-              shadow="clay"
+             
               size="medium"
-              rounded="rounded-sub-large"
+              rounded="medium"
             >
               CLAY
             </Button>
