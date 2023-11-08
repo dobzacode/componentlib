@@ -1,5 +1,6 @@
-import H2 from "../text/H2";
-import ImageGallery from "./ImageGallery";
+import ImageGallery from "../ui/galery/ImageGallery";
+import H2 from "../ui/text/H2";
+
 
 export default function GalleryShowcase() {
   const images = [

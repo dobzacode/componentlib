@@ -1,12 +1,10 @@
 
-import Header from "@/components/ui/header/Header";
+import {Header} from "@/components/ui/header/Header";
 import "./globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import Footer from "@/components/ui/footer/Footer";
 
-
-const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -21,15 +19,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="flex flex-col justify-between  gap-sub-medium relative min-h-screen">
+      <body className="flex flex-col w-full justify-between  gap-sub-medium relative min-h-screen">
         <Header
-          height="h-[150px]"
-          //top-[150px]
-          textColor="text-neutral80"
-          textType="sub-heading"
-          logoColor="text-neutral80"
-          logoType="heading--sub-large font-bold tracking-widest"
-          mobileTextType="sub-heading"
+          className="relative  flex items-center justify-center px-4"
+          size="large"
+          textColor="neutral"
+       
         ></Header>
         {children}
         <Footer

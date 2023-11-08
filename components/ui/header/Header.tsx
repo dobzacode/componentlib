@@ -1,90 +1,81 @@
-import { ReactNode } from "react";
+import { HTMLAttributes, ReactNode } from "react";
 import Nav from "./Nav";
 import NavLink from "./NavLink";
 import H2 from "../text/H2";
 import MobileNav from "./MobileNav";
 import Link from "next/link";
+import { VariantProps, cva } from "class-variance-authority";
+import { cn } from "@/utils/utils";
 
-interface HeaderProps {
-  children?: ReactNode;
-  height: string;
-  bgColor?: string;
-  logoColor?: string;
-  logoType?: string;
-  textColor?: string;
-  textType?: string;
-  mobileTextType?: string;
+const sectionVariants = cva(
+  "",
+  {
+    variants: {
+      size: {
+        small: "h-large",
+        medium: "h-sub-extra-large",
+        large: "h-extra-large",
+      },
+      intent: {
+        primary:
+          "bg-primary40 text-primary1 border-primary80 dark:border-primary1  dark:text-primary1",
+        secondary: "bg-secondary40 text-secondary1 border-secondary80",
+        tertiary: "bg-tertiary40 text-tertiary1 border-tertiary80",
+        success: "bg-success40 text-success1 border-success80",
+        error:
+          "bg-error40 text-error1 border-error80 dark:border-error1  dark:text-error1",
+        warning: "bg-warning40 text-warning1 border-warning 80",
+        info: "bg-info40 text-info1 border-info80",
+        neutral: "bg-neutral40 text-neutral1 border-neutral80",
+        
+      },
+    },  
+  },
+);
+interface HeaderProps
+  extends HTMLAttributes<HTMLHeadElement>,
+    VariantProps<typeof sectionVariants> {
+  children?: React.ReactNode;
+  textColor: "primary" | "secondary" | "tertiary" | "success" | "error" | "warning" | "info" | "neutral" | null | undefined 
 }
 
-export default function Header({
+function Header({
   children,
-  height,
-  bgColor = "",
+  className,
+  size,
+  intent,
   textColor,
-  textType = "",
-  logoColor,
-  logoType = "",
-  mobileTextType = "",
+  ...props
 }: HeaderProps) {
-  const logo = () => {
-    return (
-      <Link href="/">
-        <H2 type={logoType} textColor={logoColor}>
-          DESIGN SYSTEM
-        </H2>
-      </Link>
-    );
-  };
 
-  const navlink = () => {
-    const hover =
-      "hover:bg-neutral80 hover:text-primary1 duration-fast ease-in";
-    const currentNavStyle = "bg-neutral80 text-primary1";
 
-    return (
-      <>
-        <NavLink hover={hover} currentNavStyle={currentNavStyle} href="/color">
-          Color
-        </NavLink>
-        <NavLink
-          hover={hover}
-          currentNavStyle={currentNavStyle}
-          href="/typography"
-        >
-          Typography
-        </NavLink>
-        <NavLink
-          hover={hover}
-          currentNavStyle={currentNavStyle}
-          href="/component"
-        >
-          Component
-        </NavLink>
-      </>
-    );
-  };
+  
 
   return (
     <header
-      className={`${height} ${bgColor} flex items-center justify-center px-4  `}
+      className={cn(sectionVariants({className, size, intent}))}
+      {...props}
     >
       {children}
-      <Nav
-        navStyle="tablet:flex hidden gap-large items-center justify-between w-full mx-large "
-        navLinkStyle={`flex laptopL:gap-large laptop:gap-sub-large tablet:gap-small justify-center ${textType} ${textColor}`}
-        logo={logo()}
+      <Nav 
+        linkSize="medium"
+        intent={textColor}
+        className="tablet:flex hidden gap-large items-center justify-between w-full mx-large"
+        
       >
-        {navlink()}
+        
       </Nav>
       <MobileNav
-        navStyle="flex tablet:hidden gap-large items-center justify-between w-full mobile-large:mx-sub-large mx-small"
-        navLinkStyle={`flex flex-col gap-large justify-center ${mobileTextType} mt-sub-large pl-8 ${textColor}`}
-        modalStyle={`h-screen bg-white w-screen duration-700`}
-        height={height}
-        logo={logo()}
+      linkSize="medium"
+      intent={textColor}
+      size={size}
+      className="flex tablet:hidden gap-large items-center justify-between w-full mobile-large:mx-sub-large mx-small"
+        
       >
-        {navlink()}
+        
       </MobileNav>
     </header>
   );
 }
+
+export {Header, sectionVariants}

@@ -1,9 +1,10 @@
 "use client";
 
+import { Input } from "postcss";
 import { ChangeEvent, useState } from "react";
-import H2 from "../text/H2";
-import Input from "./Input";
-import H3 from "../text/H3";
+import H3 from "../ui/text/H3";
+import H2 from "../ui/text/H2";
+
 
 export default function InputShowcase({}) {
   const [formData, setFormData] = useState<{ radioValue: string }>({

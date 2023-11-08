@@ -1,4 +1,5 @@
 const HEADING_EXTRA_LARGE_SIZE = "12.8rem";
+const HEADING_SUB_EXTRA_LARGE_SIZE = "9.6rem"
 const HEADING_LARGE_SIZE = "6.4rem";
 const HEADING_SUBLARGE_SIZE = "4.8rem";
 const HEADING_SIZE = "3.2rem";
@@ -225,6 +226,7 @@ module.exports = {
       },
       fontSize: {
         "heading-extra-large": HEADING_EXTRA_LARGE_SIZE,
+        "heading-sub-extra-large": HEADING_SUB_EXTRA_LARGE_SIZE,
         "heading-large": HEADING_LARGE_SIZE,
         "heading-sub-large": HEADING_SUBLARGE_SIZE,
         heading: HEADING_SIZE,
@@ -234,6 +236,7 @@ module.exports = {
       },
       lineHeight: {
         "heading-extra-large": HEADING_EXTRA_LARGE_SIZE,
+        "heading-sub-extra-large": HEADING_SUB_EXTRA_LARGE_SIZE,
         "heading-large": HEADING_LARGE_SIZE,
         "heading-sub-large": HEADING_SUBLARGE_SIZE,
         heading: HEADING_SIZE,
@@ -243,6 +246,7 @@ module.exports = {
       },
       spacing: {
         "extra-large": HEADING_EXTRA_LARGE_SIZE,
+        "sub-extra-large": HEADING_SUB_EXTRA_LARGE_SIZE,
         large: HEADING_LARGE_SIZE,
         "sub-large": HEADING_SIZE,
         medium: SUBHEADING_SIZE,

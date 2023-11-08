@@ -1,20 +1,44 @@
 "use client";
 import React, { FC, HTMLProps } from "react";
+import Logo from "../branding/Logo";
+import NavLink from "./NavLink";
 
-interface NavProps {
+interface NavProps extends HTMLProps<HTMLElement> {
   children?: React.ReactNode;
-  logo?: JSX.Element;
-  navStyle?: string;
-  navLinkStyle?: string;
+  className?: string;
+  linkSize: "small" | "medium" | "large" | null | undefined
+  intent: "primary" | "secondary" | "tertiary" | "success" | "error" | "warning" | "info" | "neutral" | null | undefined
 }
 
 const Nav: FC<NavProps> = ({
-  logo,
-  navStyle = "",
-  navLinkStyle = "",
-  children,
+  className,
+  linkSize,
+intent
 }) => {
-  return <nav className={navStyle}>{logo ? logo : ""} <ul className={`${navLinkStyle}`}>{children}</ul></nav>;
+  return (
+  <nav className={className}>
+    <Logo href="/" className="font-bold tracking-widest" intent={intent} textType="heading--sub-large">DESIGN SYSTEM</Logo>
+    <ul className="flex laptopL:gap-large laptop:gap-sub-large tablet:gap-small justify-center">
+      <NavLink rounded="small" hover={true} size={linkSize} intent={intent}
+        currentNavStyle={intent}  href="/color">
+         Color
+      </NavLink>
+      <NavLink rounded="small" hover={true} size={linkSize}
+        intent={intent}
+        currentNavStyle={intent}
+        href="/typography"
+      >
+        Typography
+      </NavLink>
+      <NavLink rounded="small" hover={true} size={linkSize}
+        intent={intent}
+        currentNavStyle={intent}
+        href="/component"
+      >
+        Component
+      </NavLink>
+    </ul>
+  </nav>);
 };
 
 export default Nav;

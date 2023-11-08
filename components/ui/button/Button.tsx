@@ -8,8 +8,8 @@ const buttonVariants = cva(
     variants: {
       size: {
         small: "py-small px-sub-large body leading-body font-medium",
-        medium: "py-sub-medium px-sub-large heading",
-        large: "py-sub-large px-large heading--sub-large",
+        medium: "py-sub-medium px-sub-large sub-heading",
+        large: "py-small px-sub-large heading",
       },
       intent: {
         primary:
