@@ -8,8 +8,8 @@ const buttonVariants = cva(
     variants: {
       size: {
         small: "py-small px-sub-large body leading-body font-medium",
-        medium: "py-sub-medium px-sub-large sub-heading",
-        large: "py-small px-sub-large heading",
+        medium: "py-sub-medium px-[4rem] sub-heading",
+        large: "py-sub-large px-large heading--sub-large",
       },
       intent: {
         primary:
@@ -34,9 +34,10 @@ const buttonVariants = cva(
       },
       modifier: {
         brutalism: "border-b-4 border-l border-r-4 border-t",
+        clay: "shadow-primary-clay bg-primary1 text-primary80"
       },
       transparent: {
-        true: "bg-transparent border-current text-current",
+        true: "border-current border-2 bg-transparent  text-current",
       },
       shadow: {
         small: "",
@@ -104,12 +105,12 @@ const buttonVariants = cva(
           " shadow-primary-medium dark:shadow-primary-medium-light",
       },
       {
-        intent: "secondary",
+        intent: ["secondary", "pastelSecondary"],
         shadow: "medium",
         className: "shadow-secondary-medium",
       },
       {
-        intent: "tertiary",
+        intent: ["tertiary", "pastelTertiary"],
         shadow: "medium",
         className: "shadow-tertiary-medium",
       },
@@ -168,6 +169,7 @@ const Button: FC<ButtonProps> = forwardRef<HTMLButtonElement, ButtonProps>(
       transparent,
       intent,
       children,
+      shadow,
       ...props
     },
     ref,
@@ -184,6 +186,7 @@ const Button: FC<ButtonProps> = forwardRef<HTMLButtonElement, ButtonProps>(
             hover,
             transparent,
             modifier,
+            shadow
           }),
         )}
         {...props}

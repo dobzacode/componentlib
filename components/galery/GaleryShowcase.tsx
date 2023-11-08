@@ -57,7 +57,7 @@ export default function GalleryShowcase() {
   return (
     <div>
       <div className="flex flex-col justify-center items-center w-full gap-sub-large">
-        <H2 type="laptop-large:heading--extra-large heading--large">
+        <H2 className="laptop-large:heading--extra-large heading--large">
           Image gallery
         </H2>
         <ImageGallery

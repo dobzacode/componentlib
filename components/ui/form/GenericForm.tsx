@@ -1,13 +1,9 @@
 // GenericForm.tsx
-import { cn } from "@/utils/utils";
 import { FormEvent } from "react";
-
-import Button from "../button/Button";
 
 
 
 function Form ({
-
 })  {
 
 
@@ -18,13 +14,8 @@ function Form ({
   return (
     
       <form
-        
         onSubmit={handleSubmit}
       >
-        
-
-        
-        
       </form>
    
   );

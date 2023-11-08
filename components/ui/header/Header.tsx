@@ -62,8 +62,7 @@ function Header({
         intent={textColor}
         className="tablet:flex hidden gap-large items-center justify-between w-full mx-large"
         
-      >
-        
+      > 
       </Nav>
       <MobileNav
       linkSize="medium"
@@ -72,7 +71,6 @@ function Header({
       className="flex tablet:hidden gap-large items-center justify-between w-full mobile-large:mx-sub-large mx-small"
         
       >
-        
       </MobileNav>
     </header>
   );

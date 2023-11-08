@@ -24,7 +24,6 @@ export default function RootLayout({
           className="relative  flex items-center justify-center px-4"
           size="large"
           textColor="neutral"
-       
         ></Header>
         {children}
         <Footer
