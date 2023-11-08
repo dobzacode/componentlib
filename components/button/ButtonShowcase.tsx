@@ -1,8 +1,9 @@
 "use client";
 
-import Button from "../ui/button/Button";
+
 import H2 from "../ui/text/H2";
 import H3 from "../ui/text/H3";
+import Button from "dobza-component-lib"
 
 
 
