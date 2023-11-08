@@ -1,3 +1,5 @@
+"use client"
+
 import { FC, InputHTMLAttributes, forwardRef } from "react";
 import { inputVariants } from "../Input";
 import { VariantProps } from "class-variance-authority";

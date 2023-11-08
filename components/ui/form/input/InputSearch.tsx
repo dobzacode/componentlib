@@ -1,7 +1,9 @@
+"use client"
+
 import { cn } from "@/utils/utils";
 import { mdiMagnify } from "@mdi/js";
 import Icon from "@mdi/react";
-import { FC, InputHTMLAttributes, LegacyRef, Ref, forwardRef } from "react";
+import { FC, InputHTMLAttributes, Ref, forwardRef } from "react";
 
 interface SearchProps extends InputHTMLAttributes<HTMLInputElement> {
   ref?: Ref<HTMLInputElement>;

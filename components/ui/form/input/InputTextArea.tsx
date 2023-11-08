@@ -1,3 +1,5 @@
+"use client"
+
 import { cn } from "@/utils/utils";
 import { FC, TextareaHTMLAttributes } from "react";
 

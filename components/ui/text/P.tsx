@@ -1,5 +1,5 @@
 import { cn } from "@/utils/utils";
-import { VariantProps, cva } from "class-variance-authority";
+import { VariantProps } from "class-variance-authority";
 import { FC, HTMLProps } from "react";
 import { textVariants } from "./H1";
 

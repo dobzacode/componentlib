@@ -1,9 +1,9 @@
 
-import {Header} from "@/components/ui/header/Header";
-import "./globals.css";
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import Footer from "@/components/ui/footer/Footer";
+import { Header } from "@/components/ui/header/Header";
+import type { Metadata } from "next";
+import "./globals.css";
+
 
 
 export const metadata: Metadata = {
@@ -19,7 +19,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="flex flex-col w-full justify-between  gap-sub-medium relative min-h-screen">
+     
+      <body className="flex flex-col w-full justify-between  gap-sub-medium relative min-h-screen ">
+  
         <Header
           className="relative  flex items-center justify-center px-4"
           size="large"
@@ -30,7 +32,8 @@ export default function RootLayout({
           size="large"
           intent="neutral"
           className="flex items-center justify-center"
-        ></Footer>
+         ></Footer>
+  
       </body>
     </html>
   );

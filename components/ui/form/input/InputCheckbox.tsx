@@ -1,3 +1,5 @@
+"use client"
+
 import { FC, InputHTMLAttributes } from "react";
 
 interface CheckboxProps extends InputHTMLAttributes<HTMLInputElement> {

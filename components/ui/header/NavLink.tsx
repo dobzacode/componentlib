@@ -1,10 +1,10 @@
 "use client";
 
-import { usePathname, useRouter } from "next/navigation";
-import Link, { LinkProps } from "next/link";
-import { FC, LinkHTMLAttributes } from "react";
-import { VariantProps, cva } from "class-variance-authority";
 import { cn } from "@/utils/utils";
+import { VariantProps, cva } from "class-variance-authority";
+import Link, { LinkProps } from "next/link";
+import { usePathname } from "next/navigation";
+import { FC } from "react";
 
 const linkVariants = cva(
   "",

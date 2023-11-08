@@ -1,11 +1,9 @@
-import { HTMLAttributes, ReactNode } from "react";
-import Nav from "./Nav";
-import NavLink from "./NavLink";
-import H2 from "../text/H2";
-import MobileNav from "./MobileNav";
-import Link from "next/link";
-import { VariantProps, cva } from "class-variance-authority";
 import { cn } from "@/utils/utils";
+import { VariantProps, cva } from "class-variance-authority";
+import { HTMLAttributes } from "react";
+import MobileNav from "./MobileNav";
+import Nav from "./Nav";
+
 
 const sectionVariants = cva(
   "",
@@ -73,8 +71,9 @@ function Header({
         
       >
       </MobileNav>
+      
     </header>
   );
 }
 
-export {Header, sectionVariants}
+export { Header, sectionVariants };

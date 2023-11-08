@@ -2,27 +2,25 @@
 
 import {
   ChangeEventHandler,
-  EventHandler,
   FC,
   InputHTMLAttributes,
-  LegacyRef,
   Ref,
   SelectHTMLAttributes,
   TextareaHTMLAttributes,
-  forwardRef,
+  forwardRef
 } from "react";
-import Label from "./Label";
 import { v4 as uuidv4 } from "uuid";
 import P from "../text/P";
+import Label from "./Label";
 
-import InputRadio from "./input/InputRadio";
-import InputTextArea from "./input/InputTextArea";
-import InputCheckbox from "./input/InputCheckbox";
-import InputSearch from "./input/InputSearch";
-import InputText from "./input/InputText";
-import { VariantProps, cva } from "class-variance-authority";
 import { cn } from "@/utils/utils";
+import { VariantProps, cva } from "class-variance-authority";
+import InputCheckbox from "./input/InputCheckbox";
+import InputRadio from "./input/InputRadio";
+import InputSearch from "./input/InputSearch";
 import Select from "./input/InputSelect";
+import InputText from "./input/InputText";
+import InputTextArea from "./input/InputTextArea";
 
 const inputVariants = cva("", {
   variants: {
@@ -140,7 +138,7 @@ const Input: FC<InputProps> = forwardRef<HTMLInputElement, InputProps>(
                       }
                     />
                     {customText[index] && (
-                      <P textColor={`text-${intent}30 caption`}>
+                      <P className={`text-${intent}30 caption`}>
                         {customText[index]}
                       </P>
                     )}

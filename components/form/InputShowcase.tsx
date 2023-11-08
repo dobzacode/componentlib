@@ -2,10 +2,9 @@
 
 
 import { ChangeEvent, useState } from "react";
-import H3 from "../ui/text/H3";
-import H2 from "../ui/text/H2";
 import Input from "../ui/form/Input";
-import ColorDiv from "../ui/div/colorDiv";
+import H2 from "../ui/text/H2";
+import H3 from "../ui/text/H3";
 
 
 export default function InputShowcase({}) {

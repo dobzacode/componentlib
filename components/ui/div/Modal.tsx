@@ -2,7 +2,7 @@
 
 import { mdiClose } from "@mdi/js";
 import Icon from "@mdi/react";
-import React, { FC, useEffect, useRef, useState } from "react";
+import React, { FC, useEffect, useRef } from "react";
 import { CSSTransition } from "react-transition-group";
 import Button from "../button/Button";
 

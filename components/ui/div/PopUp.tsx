@@ -1,8 +1,7 @@
 "use client";
 
-import { useSession } from "next-auth/react";
 import { useSearchParams } from "next/navigation";
-import { FC, HTMLProps, useEffect, useRef, useState } from "react";
+import { FC, useEffect, useRef, useState } from "react";
 import { CSSTransition } from "react-transition-group";
 import H2 from "../text/H2";
 
@@ -38,7 +37,7 @@ const PopUp: FC<PopUpProps> = ({ children, isSuccess = false }) => {
         <div className=" brutalism-border relative z-50 mx-auto w-auto overflow-y-auto rounded-sub-large border-success80 bg-success1 p-medium shadow-lg">
           <div className="flex flex-col gap-sub-large px-6 py-4 text-left">
             {children}
-            <H2 type="sub-heading" textColor="text-success90">
+            <H2 type="sub-heading" className="text-success90">
               <>
                 {communityName && (
                   <>{`${

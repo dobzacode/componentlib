@@ -1,14 +1,13 @@
 "use client";
+import { cn } from "@/utils/utils";
 import { VariantProps } from "class-variance-authority";
 import {
   FC,
-  InputHTMLAttributes,
   SelectHTMLAttributes,
-  forwardRef,
+  forwardRef
 } from "react";
 import { v4 as uuidv4 } from "uuid";
 import { inputVariants } from "../Input";
-import { cn } from "@/utils/utils";
 
 interface SelectProps
   extends SelectHTMLAttributes<HTMLSelectElement>, // Use SelectHTMLAttributes

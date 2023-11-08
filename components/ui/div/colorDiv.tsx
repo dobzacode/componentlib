@@ -1,3 +1,4 @@
+
 interface ColorDivProps {
   children?: JSX.Element;
   color?: string;

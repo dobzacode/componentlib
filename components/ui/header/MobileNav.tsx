@@ -1,11 +1,10 @@
 "use client";
-import React, { FC, HTMLProps, useState } from "react";
-import Icon from "@mdi/react";
-import { mdiMenu } from "@mdi/js";
 import { cn } from "@/utils/utils";
-import NavLink from "./NavLink";
+import { mdiMenu } from "@mdi/js";
+import Icon from "@mdi/react";
+import React, { FC, useState } from "react";
 import Logo from "../branding/Logo";
-import { sectionVariants } from "./Header";
+import NavLink from "./NavLink";
 
 interface NavProps {
   children: React.ReactNode;
