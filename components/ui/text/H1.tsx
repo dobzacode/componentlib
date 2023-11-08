@@ -1,29 +1,74 @@
 import { cn } from "@/utils/utils";
+import { VariantProps, cva } from "class-variance-authority";
 import { FC, HTMLProps } from "react";
 
-interface H1Props extends HTMLProps<HTMLHeadingElement> {
-  children: string | JSX.Element;
-  type: string;
-  textColor?: string;
-  bgColor?: string;
-  padding?: string;
-  rounded?: string;
+const textVariants = cva(
+  "",
+  {
+    variants: {
+      textType: {
+        "heading--extra-large": "heading--extra-large",
+        "heading--large": "heading--large",
+        "heading--sub-large": "heading--sub-large",
+        "heading": "heading",
+        "sub-heading": "sub-heading",
+        "body": "body",
+        "caption": "caption"
+      },
+      intent: {
+        primary:
+          "text-primary80 dark:text-primary1",
+        secondary:
+           "text-secondary80 dark:text-secondary1",
+        tertiary:
+          "text-tertiary80 dark:text-tertiary1",
+        success:
+          "text-success80 dark:text-success1",
+        error:
+          "text-error80 dark:text-error1",
+        warning:
+          "text-warning80 dark:text-warning1",
+        info:
+          "text-info80 dark:text-info1",
+        neutral:
+          "text-neutral80 dark:text-neutral1",
+      },
+      hover: {
+        true: "duration-fast hover:scale-[102%]",
+      },
+    },
+
+    
+  },
+);
+
+interface H1Props
+  extends HTMLProps<HTMLHeadingElement>,
+    VariantProps<typeof textVariants> {
+  children?: React.ReactNode;
 }
 
 const H1: FC<H1Props> = ({
   children,
-  type,
-  textColor = "",
-  bgColor = "",
-  padding = "",
-  rounded = "",
+  className,
+  textType, intent, hover, 
   ...props
 }) => {
   return (
-    <h1 className={cn(type, textColor, bgColor, padding, rounded)} {...props}>
+    <h1 className={cn(
+      textVariants({
+        className,
+        intent,
+        textType,
+        hover,
+      }),
+    )} {...props}>
       {children}
     </h1>
   );
 };
 
-export default H1;
+export {textVariants, H1}
+
+;
+

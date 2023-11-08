@@ -1,6 +1,7 @@
-import ColorDiv from "@/components/div/colorDiv";
-import H2 from "@/components/text/H2";
-import P from "@/components/text/P";
+import ColorDiv from "@/components/ui/div/colorDiv";
+import H2 from "@/components/ui/text/H2";
+import P from "@/components/ui/text/P";
+
 
 export default function Color() {
   return (

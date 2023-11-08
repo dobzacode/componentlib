@@ -1,14 +1,9 @@
-import { authOptions } from "@/app/api/auth/[...nextauth]/route";
-import DarkModeButton from "@/components/darkMode/DarkModeButton";
-import Login from "@/components/user/Login";
-import UserMenu from "@/components/user/UserMenu";
-import { cn } from "@/utils/utils";
-import { getServerSession } from "next-auth";
-import Link from "next/link";
 import { ReactNode } from "react";
-import H2 from "../text/H2";
 import Nav from "./Nav";
-import SearchBar from "./SearchBar";
+import NavLink from "./NavLink";
+import H2 from "../text/H2";
+import MobileNav from "./MobileNav";
+import Link from "next/link";
 
 interface HeaderProps {
   children?: ReactNode;
@@ -21,7 +16,7 @@ interface HeaderProps {
   mobileTextType?: string;
 }
 
-async function Header({
+export default function Header({
   children,
   height,
   bgColor = "",
@@ -29,39 +24,67 @@ async function Header({
   textType = "",
   logoColor,
   logoType = "",
+  mobileTextType = "",
 }: HeaderProps) {
-  const session = await getServerSession(authOptions);
-
   const logo = () => {
     return (
       <Link href="/">
         <H2 type={logoType} textColor={logoColor}>
-          RODDAT
+          DESIGN SYSTEM
         </H2>
       </Link>
     );
   };
 
+  const navlink = () => {
+    const hover =
+      "hover:bg-neutral80 hover:text-primary1 duration-fast ease-in";
+    const currentNavStyle = "bg-neutral80 text-primary1";
+
+    return (
+      <>
+        <NavLink hover={hover} currentNavStyle={currentNavStyle} href="/color">
+          Color
+        </NavLink>
+        <NavLink
+          hover={hover}
+          currentNavStyle={currentNavStyle}
+          href="/typography"
+        >
+          Typography
+        </NavLink>
+        <NavLink
+          hover={hover}
+          currentNavStyle={currentNavStyle}
+          href="/component"
+        >
+          Component
+        </NavLink>
+      </>
+    );
+  };
+
   return (
     <header
-      className={cn(
-        height,
-        bgColor,
-        "flex items-center justify-between gap-small px-extra-small mobile-large:px-medium laptop:gap-0 laptop:px-large",
-      )}
+      className={`${height} ${bgColor} flex items-center justify-center px-4  `}
     >
+      {children}
       <Nav
-        navStyle="flex gap-large items-center justify-between"
+        navStyle="tablet:flex hidden gap-large items-center justify-between w-full mx-large "
         navLinkStyle={`flex laptopL:gap-large laptop:gap-sub-large tablet:gap-small justify-center ${textType} ${textColor}`}
         logo={logo()}
-      ></Nav>
-
-      <SearchBar></SearchBar>
-
-      {session ? <UserMenu session={session}></UserMenu> : <Login></Login>}
-      <DarkModeButton className="absolute right-2 top-2 " />
+      >
+        {navlink()}
+      </Nav>
+      <MobileNav
+        navStyle="flex tablet:hidden gap-large items-center justify-between w-full mobile-large:mx-sub-large mx-small"
+        navLinkStyle={`flex flex-col gap-large justify-center ${mobileTextType} mt-sub-large pl-8 ${textColor}`}
+        modalStyle={`h-screen bg-white w-screen duration-700`}
+        height={height}
+        logo={logo()}
+      >
+        {navlink()}
+      </MobileNav>
     </header>
   );
 }
-
-export default Header;

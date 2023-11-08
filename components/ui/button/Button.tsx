@@ -160,13 +160,13 @@ const Button: FC<ButtonProps> = forwardRef<HTMLButtonElement, ButtonProps>(
   (
     {
       className,
-      intent,
+      color,
       size,
       modifier,
       rounded,
       hover,
       transparent,
-
+      intent,
       children,
       ...props
     },

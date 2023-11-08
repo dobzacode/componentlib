@@ -1,7 +1,8 @@
-import H1 from "@/components/text/H1";
-import H2 from "@/components/text/H2";
-import H3 from "@/components/text/H3";
-import P from "@/components/text/P";
+import H1 from "@/components/ui/text/H1";
+import H2 from "@/components/ui/text/H2";
+import H3 from "@/components/ui/text/H3";
+import P from "@/components/ui/text/P";
+
 
 export default function Typography({}) {
   return (

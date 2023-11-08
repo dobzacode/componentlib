@@ -1,26 +1,31 @@
 import { cn } from "@/utils/utils";
-import { FC, HTMLProps, ReactNode } from "react";
+import { VariantProps } from "class-variance-authority";
+import { FC, HTMLProps } from "react";
+import { textVariants } from "./H1";
 
-interface H2Props extends HTMLProps<HTMLHeadingElement> {
-  children: string | ReactNode | ReactNode[];
-  type: string;
-  textColor?: string;
-  bgColor?: string;
-  padding?: string;
-  rounded?: string;
+
+
+interface H2Props
+  extends HTMLProps<HTMLHeadingElement>,
+    VariantProps<typeof textVariants> {
+  children?: React.ReactNode;
 }
 
 const H2: FC<H2Props> = ({
   children,
-  type,
-  textColor = "",
-  bgColor = "",
-  padding = "",
-  rounded = "",
+  className,
+  textType, intent, hover, 
   ...props
 }) => {
   return (
-    <h2 className={cn(type, textColor, bgColor, padding, rounded)} {...props}>
+    <h2 className={cn(
+      textVariants({
+        className,
+        intent,
+        textType,
+        hover,
+      }),
+    )} {...props}>
       {children}
     </h2>
   );
