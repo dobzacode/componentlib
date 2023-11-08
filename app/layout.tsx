@@ -27,9 +27,9 @@ export default function RootLayout({
         ></Header>
         {children}
         <Footer
-          height="h-[100px]"
-          bgColor="bg-black"
-          flex="flex items-center justify-center"
+          size="large"
+          intent="neutral"
+          className="flex items-center justify-center"
         ></Footer>
       </body>
     </html>
