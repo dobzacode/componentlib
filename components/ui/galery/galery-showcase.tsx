@@ -1,6 +1,5 @@
-import ImageGallery from "../ui/galery/ImageGallery";
-import H2 from "../ui/text/H2";
-
+import H2 from "../text/H2";
+import ImageGallery from "./image-gallery";
 
 export default function GalleryShowcase() {
   const images = [
@@ -57,7 +56,7 @@ export default function GalleryShowcase() {
   return (
     <div>
       <div className="flex flex-col justify-center items-center w-full gap-sub-large">
-        <H2 className="laptop-large:heading--extra-large heading--large">
+        <H2 type="laptop-large:heading--extra-large heading--large">
           Image gallery
         </H2>
         <ImageGallery

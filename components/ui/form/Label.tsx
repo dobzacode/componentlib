@@ -1,13 +1,14 @@
-import { cn } from "@/utils/utils";
-import { VariantProps, cva } from "class-variance-authority";
-import { FC, LabelHTMLAttributes } from "react";
+import { cn } from '@/lib/utils';
+import { VariantProps, cva } from 'class-variance-authority';
 
-const labelVariants = cva("", {
+import { FC, LabelHTMLAttributes } from 'react';
+
+const labelVariants = cva('', {
   variants: {
     isHidden: {
-      true: "--visually-hidden",
-    },
-  },
+      true: '--visually-hidden'
+    }
+  }
 });
 interface LabelProps
   extends LabelHTMLAttributes<HTMLLabelElement>,
@@ -21,8 +22,8 @@ const Label: FC<LabelProps> = ({ className, isHidden, children, ...props }) => {
       className={cn(
         labelVariants({
           className,
-          isHidden,
-        }),
+          isHidden
+        })
       )}
       {...props}
     >

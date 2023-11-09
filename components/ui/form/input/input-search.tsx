@@ -1,9 +1,9 @@
-"use client"
+'use client';
 
-import { cn } from "@/utils/utils";
-import { mdiMagnify } from "@mdi/js";
-import Icon from "@mdi/react";
-import { FC, InputHTMLAttributes, Ref, forwardRef } from "react";
+import { mdiMagnify } from '@mdi/js';
+import Icon from '@mdi/react';
+import { cn } from '@/lib/utils';
+import { FC, InputHTMLAttributes, Ref, forwardRef } from 'react';
 
 interface SearchProps extends InputHTMLAttributes<HTMLInputElement> {
   ref?: Ref<HTMLInputElement>;
@@ -14,16 +14,13 @@ const InputSearch: FC<SearchProps> = forwardRef<HTMLInputElement, SearchProps>(
     return (
       <div
         className={cn(
-          "box-border flex items-center rounded-lg border px-extra-small shadow-inner",
-          className,
+          'box-border flex items-center rounded-lg border px-extra-small shadow-inner',
+          className
         )}
       >
         <Icon path={mdiMagnify} size={2}></Icon>
         <input
-          className={cn(
-            " body placeholder:body w-full p-extra-small",
-            className,
-          )}
+          className={cn(' body placeholder:body w-full p-extra-small', className)}
           type="search"
           name={props.id}
           ref={ref}
@@ -31,9 +28,9 @@ const InputSearch: FC<SearchProps> = forwardRef<HTMLInputElement, SearchProps>(
         ></input>
       </div>
     );
-  },
+  }
 );
 
-InputSearch.displayName = "InputSearch";
+InputSearch.displayName = 'InputSearch';
 
 export default InputSearch;

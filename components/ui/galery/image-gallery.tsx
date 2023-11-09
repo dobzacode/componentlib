@@ -1,5 +1,6 @@
 import { randomUUID } from "crypto";
-import ImageDiv from "../div/ImageDiv";
+import ImageDiv from "../div/image-div";
+
 
 interface ImageProps {
   src: string;

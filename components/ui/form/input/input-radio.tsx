@@ -1,9 +1,12 @@
-"use client";
+'use client';
 
-import { FC, InputHTMLAttributes, forwardRef } from "react";
-import Label from "../Label";
-import { VariantProps } from "class-variance-authority";
-import { inputVariants } from "../Input";
+import { VariantProps } from 'class-variance-authority';
+import { FC, InputHTMLAttributes, forwardRef } from 'react';
+
+
+import Label from '../label';
+import { inputVariants } from '../input';
+
 
 interface RadioProps
   extends InputHTMLAttributes<HTMLInputElement>,
@@ -14,7 +17,7 @@ interface RadioProps
 const InputRadio: FC<RadioProps> = forwardRef<HTMLInputElement, RadioProps>(
   ({ className, value, choice, name, onChange }, ref) => {
     return (
-      <div className="flex items-center gap-extra-small">
+      <div ref={ref} className="flex items-center gap-extra-small">
         <input
           className={`${className}`}
           type="radio"
@@ -31,9 +34,9 @@ const InputRadio: FC<RadioProps> = forwardRef<HTMLInputElement, RadioProps>(
         ></Label>
       </div>
     );
-  },
+  }
 );
 
-InputRadio.displayName = "InputRadio";
+InputRadio.displayName = 'InputRadio';
 
 export default InputRadio;

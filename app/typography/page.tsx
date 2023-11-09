@@ -12,7 +12,7 @@ export default function Typography({}) {
         <H1 textType="heading--extra-large" intent="neutral">
           Extra large heading
         </H1>
-        <H2 textType="heading--large" intent="neutral">
+        <H2 textType="heading--large" intent="neutral" className="text-body">
           Large heading
         </H2>
         <H2 textType="heading--sub-large" intent="neutral">

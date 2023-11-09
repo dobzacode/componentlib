@@ -251,7 +251,7 @@ module.exports = {
         "sub-large": HEADING_SIZE,
         medium: SUBHEADING_SIZE,
         "sub-medium": parseFloat(SUBHEADING_SIZE) - 0.4 + "rem",
-        small: parseFloat(SUBHEADING_SIZE) - 0.8 + "rem",
+        small: BODY_SIZE,
         "extra-small": parseFloat(SUBHEADING_SIZE) - 1.6 + "rem",
       },
       borderRadius: {

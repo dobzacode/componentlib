@@ -1,31 +1,25 @@
-import { cn } from "@/utils/utils";
-import { VariantProps } from "class-variance-authority";
-import { FC, HTMLProps } from "react";
-import { textVariants } from "./H1";
+import { VariantProps } from 'class-variance-authority';
+import { cn } from 'lib/utils';
+import { FC, HTMLProps } from 'react';
+import { textVariants } from './h1';
 
-
-
-interface PProps
-  extends HTMLProps<HTMLParagraphElement>,
-    VariantProps<typeof textVariants> {
+interface PProps extends HTMLProps<HTMLParagraphElement>, VariantProps<typeof textVariants> {
   children?: React.ReactNode;
 }
 
-const P: FC<PProps> = ({
-  children,
-  className,
-  textType, intent, hover, 
-  ...props
-}) => {
+const P: FC<PProps> = ({ children, className, textType, intent, hover, ...props }) => {
   return (
-    <p className={cn(
-      textVariants({
-        className,
-        intent,
-        textType,
-        hover,
-      }),
-    )} {...props}>
+    <p
+      className={cn(
+        textVariants({
+          className,
+          intent,
+          textType,
+          hover
+        })
+      )}
+      {...props}
+    >
       {children}
     </p>
   );

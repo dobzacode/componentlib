@@ -1,13 +1,9 @@
-"use client";
-import { cn } from "@/utils/utils";
-import { VariantProps } from "class-variance-authority";
-import {
-  FC,
-  SelectHTMLAttributes,
-  forwardRef
-} from "react";
-import { v4 as uuidv4 } from "uuid";
-import { inputVariants } from "../Input";
+'use client';
+import { VariantProps } from 'class-variance-authority';
+import { cn } from '@/lib/utils';
+import { FC, SelectHTMLAttributes, forwardRef } from 'react';
+import { v4 as uuidv4 } from 'uuid';
+import { inputVariants } from '../input';
 
 interface SelectProps
   extends SelectHTMLAttributes<HTMLSelectElement>, // Use SelectHTMLAttributes
@@ -23,8 +19,8 @@ const InputSelect: FC<SelectProps> = forwardRef<HTMLInputElement, SelectProps>(
         {!loader ? (
           <select
             className={cn(
-              "body placeholder:body box-border cursor-pointer rounded-lg border px-extra-small py-[1.1rem] shadow-inner",
-              className,
+              'body placeholder:body box-border cursor-pointer rounded-lg border px-extra-small py-[1.1rem] shadow-inner',
+              className
             )}
             name={props.id}
             aria-label={props.id}
@@ -47,25 +43,20 @@ const InputSelect: FC<SelectProps> = forwardRef<HTMLInputElement, SelectProps>(
           <span
             ref={ref}
             className={cn(
-              "absolute top-16 box-border flex h-full w-full items-center justify-center rounded-lg border shadow-inner",
-              className,
+              'absolute top-16 box-border flex h-full w-full items-center justify-center rounded-lg border shadow-inner',
+              className
             )}
           >
             {loader}
             <select
-              className={cn(
-                `body placeholder:body w-full p-extra-small `,
-                className,
-              )}
+              className={cn(`body placeholder:body w-full p-extra-small `, className)}
               name={props.id}
-              placeholder={placeholder ? placeholder : ""}
+              placeholder={placeholder ? placeholder : ''}
               aria-label={props.id}
-              disabled={
-                choices[0] === "" || choices[0] === "No community is matching"
-              }
+              disabled={choices[0] === '' || choices[0] === 'No community is matching'}
               {...props}
             >
-              {placeholder && choices[0] !== "No community is matching" ? (
+              {placeholder && choices[0] !== 'No community is matching' ? (
                 <option value="" className="" disabled hidden>
                   {placeholder}
                 </option>
@@ -83,9 +74,9 @@ const InputSelect: FC<SelectProps> = forwardRef<HTMLInputElement, SelectProps>(
         )}
       </>
     );
-  },
+  }
 );
 
-InputSelect.displayName = "Select";
+InputSelect.displayName = 'Select';
 
 export default InputSelect;

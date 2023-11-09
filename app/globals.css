@@ -8,6 +8,10 @@
     @apply text-heading-extra-large font-bold leading-heading-extra-large;
   }
 
+  .heading--sub-extra-large {
+    @apply text-heading-sub-extra-large font-bold leading-heading-sub-extra-large;
+  }
+
   .heading--large {
     @apply text-heading-large font-bold leading-heading-large;
   }
