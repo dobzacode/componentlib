@@ -1,6 +1,6 @@
-import AllButton from "@/components/button/ButtonShowcase";
-import AllInput from "@/components/form/InputShowcase";
-import GalleryShowcase from "@/components/galery/GaleryShowcase";
+import AllButton from "@/components/button/button-showcase";
+import AllInput from "@/components/form/input-showcase";
+import GalleryShowcase from "@/components/galery/galery-showcase";
 
 export default function Component({}) {
   return (

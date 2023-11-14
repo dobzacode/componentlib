@@ -2,7 +2,7 @@
 
 import { mdiMenu } from '@mdi/js';
 import Icon from '@mdi/react';
-import { cn } from 'lib/utils';
+import { cn } from '@/lib/utils';
 import React, { FC, useState } from 'react';
 import Logo from '../branding/logo';
 import NavLink from './nav-link';

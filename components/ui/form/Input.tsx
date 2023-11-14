@@ -10,7 +10,7 @@ import {
   forwardRef
 } from 'react';
 import { v4 as uuidv4 } from 'uuid';
-import P from '../text/p';
+
 
 import { VariantProps, cva } from 'class-variance-authority';
 import { cn } from '@/lib/utils';
@@ -21,6 +21,7 @@ import Select from './input/input-select';
 import InputText from './input/input-text';
 import InputTextArea from './input/input-textarea';
 import Label from './label';
+import P from '../text/P';
 
 const inputVariants = cva('', {
   variants: {
@@ -188,5 +189,6 @@ const Input: FC<InputProps> = forwardRef<HTMLInputElement, InputProps>(
 
 Input.displayName = 'Button';
 
-export default Input;
 export { inputVariants };
+export default Input;
+

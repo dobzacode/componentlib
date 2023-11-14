@@ -1,4 +1,5 @@
-import { cn } from 'lib/utils';
+import { cn } from '@/lib/utils';
+
 import { VariantProps } from 'class-variance-authority';
 import { FC, HTMLProps } from 'react';
 import { textVariants } from './h1';

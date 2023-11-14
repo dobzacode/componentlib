@@ -5,7 +5,8 @@ import { FC, InputHTMLAttributes, forwardRef } from 'react';
 
 
 import Label from '../label';
-import { inputVariants } from '../input';
+import { inputVariants } from '../Input';
+
 
 
 interface RadioProps

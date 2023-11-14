@@ -1,5 +1,5 @@
 import { VariantProps, cva } from 'class-variance-authority';
-import { cn } from 'lib/utils';
+import { cn } from '@/lib/utils';
 import { HTMLAttributes } from 'react';
 import MobileNav from './mobile-nav';
 import Nav from './nav';

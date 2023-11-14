@@ -1,7 +1,7 @@
 'use client';
 
 import { VariantProps, cva } from 'class-variance-authority';
-import { cn } from 'lib/utils';
+import { cn } from '@/lib/utils';
 import Link, { LinkProps } from 'next/link';
 import { usePathname } from 'next/navigation';
 import { FC } from 'react';
